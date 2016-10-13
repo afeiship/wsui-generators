@@ -26,14 +26,14 @@ $font-list:(10,20,30);
 @include generator-background-color($color-map,'.bg__');
 @include generator-border-color($color-map,'.bdc__');
 
-
+//Generator width/blank/font-size/border-radius:
 @include generator-width-w1($data-src,'.w1__');
 @include generator-width-wp($width-list,'.wp__');
 @include generator-blank($width-list,'.blk__');
 @include generator-font-size($font-list,'.f__');
 @include generator-border-radius($border-radius-list,'.bdr__');
 
-
+//Generator margin:
 @include generator-margin($margin-list,'m','_');
 @include generator-margin($margin-list,'mt','_');
 @include generator-margin($margin-list,'mr','_');
@@ -42,7 +42,7 @@ $font-list:(10,20,30);
 @include generator-margin($margin-list,'mx','_');
 @include generator-margin($margin-list,'my','_');
 
-
+//Generator padding:
 @include generator-padding($padding-list,'p','__');
 @include generator-padding($padding-list,'pt','__');
 @include generator-padding($padding-list,'pr','__');
@@ -51,6 +51,8 @@ $font-list:(10,20,30);
 @include generator-padding($padding-list,'px','__');
 @include generator-padding($padding-list,'py','__');
 
+//Generator your own grid:
+@include generator-grid(12,'.wk-row','.wk-col-');
 
 ```
 
@@ -76,6 +78,7 @@ $font-list:(10,20,30);
 - [x] generator-padding-pr
 - [x] generator-padding-pb
 - [x] generator-padding-pl
+- [x] generator-grid
 
 
 ## resources:
