@@ -16,13 +16,13 @@
 }
 
 
-@mixin generator-grid ($sum:12) {
-  .row{
+@mixin generator-grid ($sum:12,$row:'.row',$col:'.col-') {
+  #{$row}{
     @include dib-row;
   }
   @for $i from 1 through $sum {
     $left:$sum - $i;
-    .col-#{$i}{
+    #{$col}#{$i}{
       @extend .col;
       @include dib-col($i,$sum);
     }
