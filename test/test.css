@@ -1,7 +1,26 @@
 /*color Start*/
 /*color End*/
+/*blank Start*/
+.blank, .blk__1, .blk__2, .blk__3, .blk__4, .blk__5, .blk__6, .blk__7, .blk__8, .blk__9 {
+  display: block;
+  font-size: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+/*blank End*/
+/*background-color Start*/
+/*background-color End*/
+/*border-radius Start*/
+/*border-radius End*/
 /*color Start*/
 /*color End*/
+/*data Start*/
+/*data End*/
+/*font-size Start*/
+/*font-size End*/
+/*width Start*/
+/*width End*/
 .c__0 {
   color: #000;
 }
@@ -40,4 +59,208 @@
 
 .bg__f {
   background-color: #fff;
+}
+
+.bdc__0 {
+  border-color: #000;
+}
+
+.bdc__3 {
+  border-color: #333;
+}
+
+.bdc__6 {
+  border-color: #666;
+}
+
+.bdc__9 {
+  border-color: #999;
+}
+
+.bdc__f {
+  border-color: #fff;
+}
+
+.w1__1 {
+  width: 100%;
+}
+
+.w1__2 {
+  width: 50%;
+}
+
+.w1__3 {
+  width: 33.33333%;
+}
+
+.w1__4 {
+  width: 25%;
+}
+
+.w1__5 {
+  width: 20%;
+}
+
+.w1__6 {
+  width: 16.66667%;
+}
+
+.w1__7 {
+  width: 14.28571%;
+}
+
+.w1__8 {
+  width: 12.5%;
+}
+
+.w1__9 {
+  width: 11.11111%;
+}
+
+.w1__10 {
+  width: 10%;
+}
+
+.w1__11 {
+  width: 9.09091%;
+}
+
+.w1__12 {
+  width: 8.33333%;
+}
+
+.w1__13 {
+  width: 7.69231%;
+}
+
+.w1__14 {
+  width: 7.14286%;
+}
+
+.w1__15 {
+  width: 6.66667%;
+}
+
+.w1__16 {
+  width: 6.25%;
+}
+
+.w1__17 {
+  width: 5.88235%;
+}
+
+.w1__18 {
+  width: 5.55556%;
+}
+
+.w1__19 {
+  width: 5.26316%;
+}
+
+.w1__20 {
+  width: 5%;
+}
+
+.wp__1 {
+  width: 10%;
+}
+
+.wp__2 {
+  width: 20%;
+}
+
+.wp__3 {
+  width: 30%;
+}
+
+.wp__4 {
+  width: 40%;
+}
+
+.wp__5 {
+  width: 50%;
+}
+
+.wp__6 {
+  width: 60%;
+}
+
+.wp__7 {
+  width: 70%;
+}
+
+.wp__8 {
+  width: 80%;
+}
+
+.wp__9 {
+  width: 90%;
+}
+
+.blk__1 {
+  height: 1px;
+}
+
+.blk__2 {
+  height: 2px;
+}
+
+.blk__3 {
+  height: 3px;
+}
+
+.blk__4 {
+  height: 4px;
+}
+
+.blk__5 {
+  height: 5px;
+}
+
+.blk__6 {
+  height: 6px;
+}
+
+.blk__7 {
+  height: 7px;
+}
+
+.blk__8 {
+  height: 8px;
+}
+
+.blk__9 {
+  height: 9px;
+}
+
+.f__10 {
+  font-size: 10px;
+}
+
+.f__20 {
+  font-size: 20px;
+}
+
+.f__30 {
+  font-size: 30px;
+}
+
+.bdr__1 {
+  border-radius: 1px;
+}
+
+.bdr__2 {
+  border-radius: 2px;
+}
+
+.bdr__3 {
+  border-radius: 3px;
+}
+
+.bdr__4 {
+  border-radius: 4px;
+}
+
+.bdr__5 {
+  border-radius: 5px;
 }

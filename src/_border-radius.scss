@@ -1,0 +1,11 @@
+/*border-radius Start*/
+@mixin generator-border-radius($inList,$inPrefix:'.bdr-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        border-radius: #{$i}px;
+      }
+    }
+  }
+}
+/*border-radius End*/

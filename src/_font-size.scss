@@ -1,0 +1,11 @@
+/*font-size Start*/
+@mixin generator-font-size($inList,$inPrefix:'.f-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        font-size:#{$i}px;
+      }
+    }
+  }
+}
+/*font-size End*/

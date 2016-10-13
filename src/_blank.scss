@@ -1,0 +1,21 @@
+/*blank Start*/
+.blank {
+  display: block;
+  font-size: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+@mixin generator-blank($inList,$inPrefix:'.blank-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        height:#{$i}px;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+
+/*blank End*/

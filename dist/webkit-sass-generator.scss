@@ -1,19 +1,103 @@
 /*color Start*/
-@mixin generator-background-color($inColorMap,$inPrefix:'.bg-'){
-  @each $name,$color in $inColorMap{
+@mixin generator-border-color($inMap,$inPrefix:'.bdc-'){
+  @each $name,$color in $inMap{
     #{$inPrefix}#{$name}{
-      background-color:#{$color};
+      border-color:#{$color};
     }
   }
 }
 /*color End*/
 
+/*blank Start*/
+.blank {
+  display: block;
+  font-size: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+@mixin generator-blank($inList,$inPrefix:'.blank-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        height:#{$i}px;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+
+/*blank End*/
+
+/*background-color Start*/
+@mixin generator-background-color($inMap,$inPrefix:'.bg-'){
+  @each $name,$color in $inMap{
+    #{$inPrefix}#{$name}{
+      background-color:#{$color};
+    }
+  }
+}
+/*background-color End*/
+
+/*border-radius Start*/
+@mixin generator-border-radius($inList,$inPrefix:'.bdr-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        border-radius: #{$i}px;
+      }
+    }
+  }
+}
+/*border-radius End*/
+
 /*color Start*/
-@mixin generator-color($inColorMap,$inPrefix:'.c-'){
-  @each $name,$color in $inColorMap{
+@mixin generator-color($inMap,$inPrefix:'.c-'){
+  @each $name,$color in $inMap{
     #{$inPrefix}#{$name}{
       color:#{$color};
     }
   }
 }
 /*color End*/
+
+/*data Start*/
+@function generator-list( $from:0, $to:9 ) {
+  $list: ();
+  @for $i from $from through $to {
+    $list: append($list, $i);
+  }
+  @return $list;
+}
+/*data End*/
+
+/*font-size Start*/
+@mixin generator-font-size($inList,$inPrefix:'.f-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        font-size:#{$i}px;
+      }
+    }
+  }
+}
+/*font-size End*/
+
+/*width Start*/
+@mixin generator-width-w1($inList,$inPrefix:'.w1-') {
+  @each $value in $inList{
+    #{$inPrefix}#{$value} {
+      width: #{100/$value+'%'};
+    }
+  }
+}
+
+@mixin generator-width-wp($inList,$inPrefix:'.wp-') {
+  @each $value in $inList{
+    #{$inPrefix}#{$value} {
+      width: #{$value*10%};
+    }
+  }
+}
+/*width End*/
