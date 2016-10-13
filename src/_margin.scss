@@ -36,32 +36,32 @@ $margin-map:(
   }
 }
 
-@mixin generator-margin-m($inList,$inPrefix){
-  @include generator-margin($inList,'m',$inPrefix:'');
+@mixin generator-margin-m($inList,$inPrefix:''){
+  @include generator-margin($inList,'m',$inPrefix);
 }
 
-@mixin generator-margin-mt($inList,$inPrefix){
-  @include generator-margin($inList,'mt',$inPrefix:'');
+@mixin generator-margin-mt($inList,$inPrefix:''){
+  @include generator-margin($inList,'mt',$inPrefix);
 }
 
-@mixin generator-margin-mr($inList,$inPrefix){
-  @include generator-margin($inList,'mr',$inPrefix:'');
+@mixin generator-margin-mr($inList,$inPrefix:''){
+  @include generator-margin($inList,'mr',$inPrefix);
 }
 
-@mixin generator-margin-mb($inList,$inPrefix){
-  @include generator-margin($inList,'mb',$inPrefix:'');
+@mixin generator-margin-mb($inList,$inPrefix:''){
+  @include generator-margin($inList,'mb',$inPrefix);
 }
 
-@mixin generator-margin-ml($inList,$inPrefix){
-  @include generator-margin($inList,'ml',$inPrefix:'');
+@mixin generator-margin-ml($inList,$inPrefix:''){
+  @include generator-margin($inList,'ml',$inPrefix);
 }
 
-@mixin generator-margin-mx($inList,$inPrefix){
-  @include generator-margin($inList,'mx',$inPrefix:'');
+@mixin generator-margin-mx($inList,$inPrefix:''){
+  @include generator-margin($inList,'mx',$inPrefix);
 }
 
-@mixin generator-margin-my($inList,$inPrefix){
-  @include generator-margin($inList,'my',$inPrefix:'');
+@mixin generator-margin-my($inList,$inPrefix:''){
+  @include generator-margin($inList,'my',$inPrefix);
 }
 
 

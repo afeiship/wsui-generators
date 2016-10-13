@@ -157,32 +157,32 @@ $margin-map:(
   }
 }
 
-@mixin generator-margin-m($inList,$inPrefix){
-  @include generator-margin($inList,'m',$inPrefix:'');
+@mixin generator-margin-m($inList,$inPrefix:''){
+  @include generator-margin($inList,'m',$inPrefix);
 }
 
-@mixin generator-margin-mt($inList,$inPrefix){
-  @include generator-margin($inList,'mt',$inPrefix:'');
+@mixin generator-margin-mt($inList,$inPrefix:''){
+  @include generator-margin($inList,'mt',$inPrefix);
 }
 
-@mixin generator-margin-mr($inList,$inPrefix){
-  @include generator-margin($inList,'mr',$inPrefix:'');
+@mixin generator-margin-mr($inList,$inPrefix:''){
+  @include generator-margin($inList,'mr',$inPrefix);
 }
 
-@mixin generator-margin-mb($inList,$inPrefix){
-  @include generator-margin($inList,'mb',$inPrefix:'');
+@mixin generator-margin-mb($inList,$inPrefix:''){
+  @include generator-margin($inList,'mb',$inPrefix);
 }
 
-@mixin generator-margin-ml($inList,$inPrefix){
-  @include generator-margin($inList,'ml',$inPrefix:'');
+@mixin generator-margin-ml($inList,$inPrefix:''){
+  @include generator-margin($inList,'ml',$inPrefix);
 }
 
-@mixin generator-margin-mx($inList,$inPrefix){
-  @include generator-margin($inList,'mx',$inPrefix:'');
+@mixin generator-margin-mx($inList,$inPrefix:''){
+  @include generator-margin($inList,'mx',$inPrefix);
 }
 
-@mixin generator-margin-my($inList,$inPrefix){
-  @include generator-margin($inList,'my',$inPrefix:'');
+@mixin generator-margin-my($inList,$inPrefix:''){
+  @include generator-margin($inList,'my',$inPrefix);
 }
 
 
@@ -226,32 +226,32 @@ $padding-map:(
   }
 }
 
-@mixin generator-padding-p($inList,$inPrefix){
-  @include generator-padding($inList,'p',$inPrefix:'');
+@mixin generator-padding-p($inList,$inPrefix:''){
+  @include generator-padding($inList,'p',$inPrefix);
 }
 
-@mixin generator-padding-pt($inList,$inPrefix){
-  @include generator-padding($inList,'pt',$inPrefix:'');
+@mixin generator-padding-pt($inList,$inPrefix:''){
+  @include generator-padding($inList,'pt',$inPrefix);
 }
 
-@mixin generator-padding-pr($inList,$inPrefix){
-  @include generator-padding($inList,'pr',$inPrefix:'');
+@mixin generator-padding-pr($inList,$inPrefix:''){
+  @include generator-padding($inList,'pr',$inPrefix);
 }
 
-@mixin generator-padding-pb($inList,$inPrefix){
-  @include generator-padding($inList,'pb',$inPrefix:'');
+@mixin generator-padding-pb($inList,$inPrefix:''){
+  @include generator-padding($inList,'pb',$inPrefix);
 }
 
-@mixin generator-padding-pl($inList,$inPrefix){
-  @include generator-padding($inList,'pl',$inPrefix:'');
+@mixin generator-padding-pl($inList,$inPrefix:''){
+  @include generator-padding($inList,'pl',$inPrefix);
 }
 
-@mixin generator-padding-px($inList,$inPrefix){
-  @include generator-padding($inList,'px',$inPrefix:'');
+@mixin generator-padding-px($inList,$inPrefix:''){
+  @include generator-padding($inList,'px',$inPrefix);
 }
 
-@mixin generator-padding-py($inList,$inPrefix){
-  @include generator-padding($inList,'py',$inPrefix:'');
+@mixin generator-padding-py($inList,$inPrefix:''){
+  @include generator-padding($inList,'py',$inPrefix);
 }
 
 
