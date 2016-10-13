@@ -1,0 +1,14 @@
+@import "../dist/webkit-sass-generator";
+
+
+
+$color-map: (
+  0:#000,
+  3:#333,
+  6:#666,
+  9:#999,
+  f:#fff
+);
+
+@include generator-color($color-map,'.c__');
+@include generator-background-color($color-map,'.bg__');

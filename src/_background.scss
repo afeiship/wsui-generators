@@ -1,0 +1,9 @@
+/*color Start*/
+@mixin generator-background-color($inColorMap,$inPrefix:'.bg-'){
+  @each $name,$color in $inColorMap{
+    #{$inPrefix}#{$name}{
+      background-color:#{$color};
+    }
+  }
+}
+/*color End*/

@@ -1,0 +1,19 @@
+/*color Start*/
+@mixin generator-background-color($inColorMap,$inPrefix:'.bg-'){
+  @each $name,$color in $inColorMap{
+    #{$inPrefix}#{$name}{
+      background-color:#{$color};
+    }
+  }
+}
+/*color End*/
+
+/*color Start*/
+@mixin generator-color($inColorMap,$inPrefix:'.c-'){
+  @each $name,$color in $inColorMap{
+    #{$inPrefix}#{$name}{
+      color:#{$color};
+    }
+  }
+}
+/*color End*/
