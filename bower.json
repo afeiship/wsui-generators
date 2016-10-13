@@ -1,7 +1,7 @@
 {
   "name": "webkit-sass-generators",
   "description": "Webkit sass generator mixins.",
-  "main": "dist/webkit-sass-generators.js",
+  "main": "dist/webkit-sass-generators.scss",
   "authors": [
     "afei"
   ],
