@@ -3,15 +3,15 @@
 
 
 ## todos:
-- [ ] generator-background-color
-- [ ] generator-blank
-- [ ] generator-border-color
-- [ ] generator-border-radius
-- [ ] generator-color
-- [ ] generator-list (data)
-- [ ] generator-font-size
-- [ ] generator-width-w1 (width-w1)
-- [ ] generator-width-wp (width-wp)
+- [x] generator-background-color
+- [x] generator-blank
+- [x] generator-border-color
+- [x] generator-border-radius
+- [x] generator-color
+- [x] generator-list (data)
+- [x] generator-font-size
+- [x] generator-width-w1 (width-w1)
+- [x] generator-width-wp (width-wp)
 
 
 ## resources:
