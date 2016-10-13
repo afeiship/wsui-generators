@@ -47,3 +47,5 @@ $font-list:(10,20,30);
 
 ## resources:
 + http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
++ http://sass-lang.com/documentation/Sass/Script/Functions.html
++ https://github.com/HugoGiraudel/SassyStrings
