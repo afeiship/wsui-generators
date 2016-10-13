@@ -4,7 +4,7 @@
 ## usage:
 ```sass
 @import "../dist/webkit-sass-generator";
-
+//test color-map
 $color-map: (
   0:#000,
   3:#333,
@@ -13,6 +13,8 @@ $color-map: (
   f:#fff
 );
 $width-list:(1,2,3,4,5,6,7,8,9);
+$margin-list:(1,2,3,4,5,6,7,8,9);
+$padding-list:(1,2,3,4,5,6,7,8,90,100);
 
 //Generator a list:
 $data-src:generator-list(1,20);
@@ -30,6 +32,25 @@ $font-list:(10,20,30);
 @include generator-blank($width-list,'.blk__');
 @include generator-font-size($font-list,'.f__');
 @include generator-border-radius($border-radius-list,'.bdr__');
+
+
+@include generator-margin($margin-list,'m','_');
+@include generator-margin($margin-list,'mt','_');
+@include generator-margin($margin-list,'mr','_');
+@include generator-margin($margin-list,'ml','_');
+@include generator-margin($margin-list,'mb','_');
+@include generator-margin($margin-list,'mx','_');
+@include generator-margin($margin-list,'my','_');
+
+
+@include generator-padding($padding-list,'p','__');
+@include generator-padding($padding-list,'pt','__');
+@include generator-padding($padding-list,'pr','__');
+@include generator-padding($padding-list,'pl','__');
+@include generator-padding($padding-list,'pb','__');
+@include generator-padding($padding-list,'px','__');
+@include generator-padding($padding-list,'py','__');
+
 
 ```
 

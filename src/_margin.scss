@@ -1,0 +1,68 @@
+/*margin Start*/
+$margin-map:(
+  m:margin,
+  mt:margin-top,
+  mr:margin-right,
+  mb:margin-bottom,
+  ml:margin-left,
+  mx:(margin-left,margin-right),
+  my:(margin-top,margin-bottom)
+);
+
+@mixin generator-margin($inList,$inDirection:'m',$inPrefix:''){
+  $mapValue:map_get($margin-map,$inDirection);
+  $typeof:type-of($mapValue);
+
+
+  @if $typeof =='string'{
+    .#{$inDirection}#{$inPrefix} {
+      @each $i in $inList{
+        &#{$i}{
+          #{$mapValue}:#{$i}px;
+        }
+      }
+    }
+  }@else{
+    .#{$inDirection}#{$inPrefix} {
+      @each $i in $inList{
+        &#{$i}{
+          //mapValue is a `list`
+          @each $mapItem in $mapValue{
+            #{$mapItem}:#{$i}px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin generator-margin-m($inList,$inPrefix){
+  @include generator-margin($inList,'m',$inPrefix:'');
+}
+
+@mixin generator-margin-mt($inList,$inPrefix){
+  @include generator-margin($inList,'mt',$inPrefix:'');
+}
+
+@mixin generator-margin-mr($inList,$inPrefix){
+  @include generator-margin($inList,'mr',$inPrefix:'');
+}
+
+@mixin generator-margin-mb($inList,$inPrefix){
+  @include generator-margin($inList,'mb',$inPrefix:'');
+}
+
+@mixin generator-margin-ml($inList,$inPrefix){
+  @include generator-margin($inList,'ml',$inPrefix:'');
+}
+
+@mixin generator-margin-mx($inList,$inPrefix){
+  @include generator-margin($inList,'mx',$inPrefix:'');
+}
+
+@mixin generator-margin-my($inList,$inPrefix){
+  @include generator-margin($inList,'my',$inPrefix:'');
+}
+
+
+/*margin End*/
