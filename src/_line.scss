@@ -1,0 +1,13 @@
+/*line Start*/
+@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}px;
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+/*line End*/

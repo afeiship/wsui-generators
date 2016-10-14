@@ -48,3 +48,4 @@ $font-list:(10,20,30);
 
 //Generate your own grid:
 @include generator-grid(12,'.wk-row','.wk-col-');
+@include generator-line($width-list,#f3f3f3,'.dc-line-');

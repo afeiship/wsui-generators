@@ -1,7 +1,7 @@
 /*color Start*/
 /*color End*/
 /*blank Start*/
-.blank, .blk__1, .blk__2, .blk__3, .blk__4, .blk__5, .blk__6, .blk__7, .blk__8, .blk__9 {
+.blank, .blk__1, .blk__2, .blk__3, .blk__4, .blk__5, .blk__6, .blk__7, .blk__8, .blk__9, .dc-line-1, .dc-line-2, .dc-line-3, .dc-line-4, .dc-line-5, .dc-line-6, .dc-line-7, .dc-line-8, .dc-line-9 {
   display: block;
   font-size: 0;
   overflow: hidden;
@@ -27,6 +27,8 @@
 }
 
 /*grid End*/
+/*line Start*/
+/*line End*/
 /*margin Start*/
 /*margin End*/
 /*padding Start*/
@@ -981,4 +983,49 @@
 
 .offset-0 {
   margin-left: 0%;
+}
+
+.dc-line-1 {
+  height: 1px;
+  background-color: #f3f3f3;
+}
+
+.dc-line-2 {
+  height: 2px;
+  background-color: #f3f3f3;
+}
+
+.dc-line-3 {
+  height: 3px;
+  background-color: #f3f3f3;
+}
+
+.dc-line-4 {
+  height: 4px;
+  background-color: #f3f3f3;
+}
+
+.dc-line-5 {
+  height: 5px;
+  background-color: #f3f3f3;
+}
+
+.dc-line-6 {
+  height: 6px;
+  background-color: #f3f3f3;
+}
+
+.dc-line-7 {
+  height: 7px;
+  background-color: #f3f3f3;
+}
+
+.dc-line-8 {
+  height: 8px;
+  background-color: #f3f3f3;
+}
+
+.dc-line-9 {
+  height: 9px;
+  background-color: #f3f3f3;
 }
