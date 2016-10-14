@@ -20,7 +20,7 @@
 /*font-size Start*/
 /*font-size End*/
 /*grid Start*/
-.col, .wk-col-1, .wk-col-2, .wk-col-3, .wk-col-4, .wk-col-5, .wk-col-6, .wk-col-7, .wk-col-8, .wk-col-9, .wk-col-10, .wk-col-11, .wk-col-12 {
+.dib-col, .wk-col-1, .wk-col-2, .wk-col-3, .wk-col-4, .wk-col-5, .wk-col-6, .wk-col-7, .wk-col-8, .wk-col-9, .wk-col-10, .wk-col-11, .wk-col-12 {
   width: 100%;
   display: inline-block;
   font-size: 16px;

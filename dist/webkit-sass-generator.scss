@@ -85,7 +85,7 @@
 /*font-size End*/
 
 /*grid Start*/
-.col{
+.dib-col{
   width: 100%;
   display: inline-block;
   font-size: 16px;
@@ -109,7 +109,7 @@
   @for $i from 1 through $sum {
     $left:$sum - $i;
     #{$col}#{$i}{
-      @extend .col;
+      @extend .dib-col;
       @include dib-col($i,$sum);
     }
     .offset-#{$left}{
