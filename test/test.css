@@ -27,6 +27,16 @@
 }
 
 /*grid End*/
+/*line-clamp Start*/
+.line-clamp, .line-clamp-1, .line-clamp-2, .line-clamp-3, .line-clamp-4, .line-clamp-5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/*line-clamp End*/
 /*line Start*/
 /*line End*/
 /*margin Start*/
@@ -1028,4 +1038,24 @@
 .dc-line-9 {
   height: 9px;
   background-color: #f3f3f3;
+}
+
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-4 {
+  -webkit-line-clamp: 4;
+}
+
+.line-clamp-5 {
+  -webkit-line-clamp: 5;
 }

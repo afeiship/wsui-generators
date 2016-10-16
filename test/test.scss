@@ -15,7 +15,7 @@ $padding-list:(1,2,3,4,5,6,7,8,90,100);
 $data-src:generator-list(1,20);
 $border-radius-list:generator-list(1,5);
 $font-list:(10,20,30);
-
+$line-clamp:(1,2,3,4,5);
 
 @include generator-color($color-map,'.c__');
 @include generator-background-color($color-map,'.bg__');
@@ -49,3 +49,4 @@ $font-list:(10,20,30);
 //Generate your own grid:
 @include generator-grid(12,'.wk-row','.wk-col-');
 @include generator-line($width-list,#f3f3f3,'.dc-line-');
+@include generator-line-clamp($line-clamp,'.line-clamp-');

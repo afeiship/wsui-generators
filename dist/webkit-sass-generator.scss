@@ -119,6 +119,37 @@
 }
 /*grid End*/
 
+/*line-clamp Start*/
+.line-clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@mixin line-clamp($inLine) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  display: -webkit-box;
+  -webkit-line-clamp: $inLine;
+  -webkit-box-orient: vertical;
+}
+
+
+@mixin generator-line-clamp($inList,$inPrefix:'.lc-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        -webkit-line-clamp: $i;
+        @extend .line-clamp;
+      }
+    }
+  }
+}
+
+/*line-clamp End*/
+
 /*line Start*/
 @mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
   #{$inPrefix} {
