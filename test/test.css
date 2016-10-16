@@ -17,6 +17,8 @@
 /*color End*/
 /*data Start*/
 /*data End*/
+/*dot Start*/
+/*dot End*/
 /*font-size Start*/
 /*font-size End*/
 /*grid Start*/
@@ -1058,4 +1060,88 @@
 
 .line-clamp-5 {
   -webkit-line-clamp: 5;
+}
+
+.dot-2 {
+  font-size: 1em;
+  min-width: 2px;
+  height: 2px;
+  line-height: 2px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background-color: #f00;
+  border-radius: 100px;
+}
+
+.dot-4 {
+  font-size: 1em;
+  min-width: 4px;
+  height: 4px;
+  line-height: 4px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background-color: #f00;
+  border-radius: 100px;
+}
+
+.dot-6 {
+  font-size: 1em;
+  min-width: 6px;
+  height: 6px;
+  line-height: 6px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background-color: #f00;
+  border-radius: 100px;
+}
+
+.dot-8 {
+  font-size: 1em;
+  min-width: 8px;
+  height: 8px;
+  line-height: 8px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background-color: #f00;
+  border-radius: 100px;
+}
+
+.dot-12 {
+  font-size: 1em;
+  min-width: 12px;
+  height: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background-color: #f00;
+  border-radius: 100px;
+}
+
+.dot-18 {
+  font-size: 1em;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background-color: #f00;
+  border-radius: 100px;
+}
+
+.dot-20 {
+  font-size: 1em;
+  min-width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  background-color: #f00;
+  border-radius: 100px;
 }
