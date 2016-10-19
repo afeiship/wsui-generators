@@ -22,6 +22,7 @@ $line-clamp:(1,2,3,4,5);
 @include generator-background-color($color-map,'.bg__');
 @include generator-border-color($color-map,'.bdc__');
 
+
 //Generate width/blank/font-size/border-radius:
 @include generator-width-w1($data-src,'.w1__');
 @include generator-width-wp($width-list,'.wp__');

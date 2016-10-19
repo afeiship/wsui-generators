@@ -62,36 +62,6 @@
 }
 /*color End*/
 
-/*data Start*/
-@function generator-list( $from:0, $to:9 ) {
-  $list: ();
-  @for $i from $from through $to {
-    $list: append($list, $i);
-  }
-  @return $list;
-}
-/*data End*/
-
-/*dot Start*/
-@mixin generator-dot($inList,$inColor,$inRadius:100px,$inPrefix:'.dot-'){
-  #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        font-size: 1em;
-        min-width:#{$i}px;
-        height:#{$i}px;
-        line-height: #{$i}px;
-        text-align: center;
-        color:#fff;
-        display: inline-block;
-        background-color:$inColor;
-        border-radius:$inRadius;
-      }
-    }
-  }
-}
-/*dot End*/
-
 /*font-size Start*/
 @mixin generator-font-size($inList,$inPrefix:'.f-'){
   #{$inPrefix} {
