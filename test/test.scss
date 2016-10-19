@@ -30,25 +30,36 @@ $dot-list:(2,4,6,8,12,18,20);
 @include generator-border-radius($border-radius-list,'.bdr__');
 
 //Generate margin:
-@include generator-margin($margin-list,'m','_');
-@include generator-margin($margin-list,'mt','_');
-@include generator-margin($margin-list,'mr','_');
-@include generator-margin($margin-list,'ml','_');
-@include generator-margin($margin-list,'mb','_');
-@include generator-margin($margin-list,'mx','_');
-@include generator-margin($margin-list,'my','_');
+@include generator-margin($margin-list,'m');
+@include generator-margin($margin-list,'mt');
+@include generator-margin($margin-list,'mr');
+@include generator-margin($margin-list,'ml');
+@include generator-margin($margin-list,'mb');
+@include generator-margin($margin-list,'mx');
+@include generator-margin($margin-list,'my');
 
 //Generate padding:
-@include generator-padding($padding-list,'p','__');
-@include generator-padding($padding-list,'pt','__');
-@include generator-padding($padding-list,'pr','__');
-@include generator-padding($padding-list,'pl','__');
-@include generator-padding($padding-list,'pb','__');
-@include generator-padding($padding-list,'px','__');
-@include generator-padding($padding-list,'py','__');
+@include generator-padding($padding-list,'p');
+@include generator-padding($padding-list,'pt');
+@include generator-padding($padding-list,'pr');
+@include generator-padding($padding-list,'pl');
+@include generator-padding($padding-list,'pb');
+@include generator-padding($padding-list,'px');
+@include generator-padding($padding-list,'py');
 
 //Generate your own grid:
 @include generator-grid(12,'.wk-row','.wk-col-');
 @include generator-line($width-list,#f3f3f3,'.dc-line-');
 @include generator-line-clamp($line-clamp,'.line-clamp-');
 @include generator-dot($dot-list,#f00);
+
+.container .dot-20 {
+  width: auto;
+  padding: 0 2px;
+}
+
+.test-ml100{
+  >span{
+    border: 1px solid #000;
+  }
+}

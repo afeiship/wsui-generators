@@ -1,5 +1,5 @@
 /*padding Start*/
-$padding-map:(
+$padding-map: (
   p:padding,
   pt:padding-top,
   pr:padding-right,
@@ -9,60 +9,64 @@ $padding-map:(
   py:(padding-top,padding-bottom)
 );
 
-@mixin generator-padding($inList,$inDirection:'p',$inPrefix:''){
-  $mapValue:map_get($padding-map,$inDirection);
-  $typeof:type-of($mapValue);
+.pr_->*:last-child{
+  padding-right: 0;
+}
+.pl_->*:first-child{
+  padding-left: 0;
+}
 
+@mixin generator-padding($inList,$inDirection:'p') {
+  $mapValue: map_get($padding-map,$inDirection);
+  $typeof: type-of($mapValue);
 
-  @if $typeof =='string'{
-    .#{$inDirection}#{$inPrefix} {
-      @each $i in $inList{
-        &#{$i}{
-          #{$mapValue}:#{$i}px;
+  @if $typeof =='string' {
+    .#{$inDirection} {
+      @each $i in $inList {
+        &#{$i} {
+          &,
+          &_>*{
+            #{$mapValue}: #{$i}px;
+          }
         }
       }
     }
-  }@else{
-    .#{$inDirection}#{$inPrefix} {
-      @each $i in $inList{
-        &#{$i}{
-          //mapValue is a `list`
-          @each $mapItem in $mapValue{
-            #{$mapItem}:#{$i}px;
+  }
+  @else {
+    .#{$inDirection} {
+      @each $i in $inList {
+        &#{$i} {
+          &,
+          &_>*{
+            //mapValue is a `list`
+            @each $mapItem in $mapValue {
+              #{$mapItem}: #{$i}px;
+            }
           }
         }
       }
     }
   }
 }
-
-@mixin generator-padding-p($inList,$inPrefix:''){
-  @include generator-padding($inList,'p',$inPrefix);
+@mixin generator-padding-p($inList) {
+   @include generator-padding($inList,'p');
 }
-
-@mixin generator-padding-pt($inList,$inPrefix:''){
-  @include generator-padding($inList,'pt',$inPrefix);
+@mixin generator-padding-pt($inList) {
+   @include generator-padding($inList,'pt');
 }
-
-@mixin generator-padding-pr($inList,$inPrefix:''){
-  @include generator-padding($inList,'pr',$inPrefix);
+@mixin generator-padding-pr($inList) {
+   @include generator-padding($inList,'pr');
 }
-
-@mixin generator-padding-pb($inList,$inPrefix:''){
-  @include generator-padding($inList,'pb',$inPrefix);
+@mixin generator-padding-pb($inList) {
+   @include generator-padding($inList,'pb');
 }
-
-@mixin generator-padding-pl($inList,$inPrefix:''){
-  @include generator-padding($inList,'pl',$inPrefix);
+@mixin generator-padding-pl($inList) {
+   @include generator-padding($inList,'pl');
 }
-
-@mixin generator-padding-px($inList,$inPrefix:''){
-  @include generator-padding($inList,'px',$inPrefix);
+@mixin generator-padding-px($inList) {
+   @include generator-padding($inList,'px');
 }
-
-@mixin generator-padding-py($inList,$inPrefix:''){
-  @include generator-padding($inList,'py',$inPrefix);
+@mixin generator-padding-py($inList) {
+   @include generator-padding($inList,'py');
 }
-
-
 /*padding End*/
