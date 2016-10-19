@@ -1,3 +1,4 @@
+@import "../bower_components/webkit-sass-functions/dist/webkit-sass-functions";
 @import "../dist/webkit-sass-generator";
 //test color-map
 $color-map: (
@@ -12,8 +13,8 @@ $margin-list:(1,2,3,4,5,6,7,8,9);
 $padding-list:(1,2,3,4,5,6,7,8,90,100);
 
 //Generate a list:
-$data-src:generator-list(1,20);
-$border-radius-list:generator-list(1,5);
+$data-src:generate-list(1,20);
+$border-radius-list:generate-list(1,5);
 $font-list:(10,20,30);
 $line-clamp:(1,2,3,4,5);
 
