@@ -12,7 +12,7 @@
   //styles
   gulp.task('styles',function() {
     return gulp.src('src/**')
-      .pipe($.concat('webkit-sass-generator.scss'))
+      .pipe($.concat('webkit-sass-generators.scss'))
       .pipe(gulp.dest('dist'));
   });
 
