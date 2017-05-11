@@ -1,5 +1,5 @@
 @import "../bower_components/webkit-sass-functions/dist/webkit-sass-functions";
-@import "../dist/webkit-sass-generator";
+@import "../dist/webkit-sass-generators.scss";
 //test color-map
 $color-map: (
   0:#000,
@@ -26,8 +26,8 @@ $line-clamp:(1,2,3,4,5);
 //Generate width/blank/font-size/border-radius:
 @include generator-width-w1($data-src,'.w1__');
 @include generator-width-wp($width-list,'.wp__');
-@include generator-blank($width-list,'.blk__');
-@include generator-font-size($font-list,'.f__');
+@include generator-blank($width-list,'.blk__',$rem:px);
+@include generator-font-size($font-list,'.f__',$rem:px);
 @include generator-border-radius($border-radius-list,'.bdr__');
 
 //Generate margin:

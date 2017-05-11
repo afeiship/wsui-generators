@@ -1,3 +1,7 @@
+/* init start*/
+@import "bower_components/webkit-sass-functions/dist/webkit-sass-functions.scss";
+/* init end*/
+
 /*color Start*/
 @mixin generator-border-color($inMap,$inPrefix:'.bdc-'){
   @each $name,$color in $inMap{
@@ -16,11 +20,11 @@
   clear: both;
 }
 
-@mixin generator-blank($inList,$inPrefix:'.blank-'){
+@mixin generator-blank($inList,$inPrefix:'.blank-',$rem:50){
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        height:#{$i}px;
+        height: to-rem-value($i,$rem);
         @extend .blank;
       }
     }
@@ -63,15 +67,16 @@
 /*color End*/
 
 /*font-size Start*/
-@mixin generator-font-size($inList,$inPrefix:'.f-'){
+@mixin generator-font-size($inList,$inPrefix:'.f-',$rem:50) {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        font-size:#{$i}px;
+    @each $i in $inList {
+      &#{$i} {
+        font-size: to-rem-value($i, $rem);
       }
     }
   }
 }
+
 /*font-size End*/
 
 /*grid Start*/
@@ -109,6 +114,20 @@
 }
 /*grid End*/
 
+/*line Start*/
+@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-',$rem:50) {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: to-rem-value($i,$rem);
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+/*line End*/
+
 /*line-clamp Start*/
 .line-clamp {
   overflow: hidden;
@@ -141,41 +160,27 @@
 /*line-clamp End*/
 
 /*line-height Start*/
-@mixin generator-line-height($inList,$inPrefix:'.lh-') {
+@mixin generator-line-height($inList,$inPrefix:'.lh-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        line-height: #{$i}px;
+        line-height: to-rem-value($i,$rem);
       }
     }
   }
 }
 
-@mixin generator-hlh($inList,$inPrefix:'.hlh-') {
+@mixin generator-hlh($inList,$inPrefix:'.hlh-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: #{$i}px;
-        line-height: #{$i}px;
+        height: to-rem-value($i,$rem);
+        line-height: to-rem-value($i,$rem);
       }
     }
   }
 }
 /*line-height End*/
-
-/*line Start*/
-@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
-  #{$inPrefix} {
-    @each $i in $inList {
-      &#{$i} {
-        height: #{$i}px;
-        background-color: $inColor;
-        @extend .blank;
-      }
-    }
-  }
-}
-/*line End*/
 
 /*margin Start*/
 $margin-map:(
@@ -195,7 +200,7 @@ $margin-map:(
   margin-left: 0;
 }
 
-@mixin generator-margin($inList,$inDirection:'m'){
+@mixin generator-margin($inList,$inDirection:'m',$rem:50){
   $mapValue:map_get($margin-map,$inDirection);
   $typeof:type-of($mapValue);
 
@@ -205,7 +210,7 @@ $margin-map:(
         &#{$i}{
           &,
           &_>*{
-            #{$mapValue}:#{$i}px;
+            #{$mapValue}: to-rem-value($i,$rem);
           }
         }
       }
@@ -218,7 +223,7 @@ $margin-map:(
           &_>*{
             //mapValue is a `list`
             @each $mapItem in $mapValue{
-              #{$mapItem}:#{$i}px;
+              #{$mapItem}: to-rem-value($i,$rem);
             }
           }
         }
@@ -277,7 +282,7 @@ $padding-map: (
   padding-left: 0;
 }
 
-@mixin generator-padding($inList,$inDirection:'p') {
+@mixin generator-padding($inList,$inDirection:'p',$rem:50) {
   $mapValue: map_get($padding-map,$inDirection);
   $typeof: type-of($mapValue);
 
@@ -287,7 +292,7 @@ $padding-map: (
         &#{$i} {
           &,
           &_>*{
-            #{$mapValue}: #{$i}px;
+            #{$mapValue}: to-rem-value($i,$rem);
           }
         }
       }
@@ -301,7 +306,7 @@ $padding-map: (
           &_>*{
             //mapValue is a `list`
             @each $mapItem in $mapValue {
-              #{$mapItem}: #{$i}px;
+              #{$mapItem}: to-rem-value($i,$rem);
             }
           }
         }

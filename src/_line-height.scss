@@ -1,20 +1,20 @@
 /*line-height Start*/
-@mixin generator-line-height($inList,$inPrefix:'.lh-') {
+@mixin generator-line-height($inList,$inPrefix:'.lh-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        line-height: #{$i}px;
+        line-height: to-rem-value($i,$rem);
       }
     }
   }
 }
 
-@mixin generator-hlh($inList,$inPrefix:'.hlh-') {
+@mixin generator-hlh($inList,$inPrefix:'.hlh-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: #{$i}px;
-        line-height: #{$i}px;
+        height: to-rem-value($i,$rem);
+        line-height: to-rem-value($i,$rem);
       }
     }
   }

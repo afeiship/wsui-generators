@@ -16,7 +16,7 @@ $padding-map: (
   padding-left: 0;
 }
 
-@mixin generator-padding($inList,$inDirection:'p') {
+@mixin generator-padding($inList,$inDirection:'p',$rem:50) {
   $mapValue: map_get($padding-map,$inDirection);
   $typeof: type-of($mapValue);
 
@@ -26,7 +26,7 @@ $padding-map: (
         &#{$i} {
           &,
           &_>*{
-            #{$mapValue}: #{$i}px;
+            #{$mapValue}: to-rem-value($i,$rem);
           }
         }
       }
@@ -40,7 +40,7 @@ $padding-map: (
           &_>*{
             //mapValue is a `list`
             @each $mapItem in $mapValue {
-              #{$mapItem}: #{$i}px;
+              #{$mapItem}: to-rem-value($i,$rem);
             }
           }
         }

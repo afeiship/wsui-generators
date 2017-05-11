@@ -1,9 +1,9 @@
 /*line Start*/
-@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
+@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: #{$i}px;
+        height: to-rem-value($i,$rem);
         background-color: $inColor;
         @extend .blank;
       }

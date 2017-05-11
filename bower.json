@@ -21,7 +21,7 @@
     "tests",
     "src"
   ],
-  "devDependencies": {
+  "dependencies": {
     "webkit-sass-functions": "afeiship/webkit-sass-functions"
   }
 }

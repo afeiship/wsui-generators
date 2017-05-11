@@ -6,11 +6,11 @@
   clear: both;
 }
 
-@mixin generator-blank($inList,$inPrefix:'.blank-'){
+@mixin generator-blank($inList,$inPrefix:'.blank-',$rem:50){
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        height:#{$i}px;
+        height: to-rem-value($i,$rem);
         @extend .blank;
       }
     }
