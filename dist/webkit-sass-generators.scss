@@ -34,15 +34,15 @@
 
 /*blank End*/
 
-/*background-color Start*/
-@mixin generator-background-color($inMap,$inPrefix:'.bg-'){
+/*border-color Start*/
+@mixin generator-border-color($inMap,$inPrefix:'.bg-'){
   @each $name,$color in $inMap{
     #{$inPrefix}#{$name}{
-      background-color:#{$color};
+      border-color:#{$color};
     }
   }
 }
-/*background-color End*/
+/*border-color End*/
 
 /*border-radius Start*/
 @mixin generator-border-radius($inList,$inPrefix:'.bdr-'){
