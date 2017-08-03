@@ -16,7 +16,8 @@ $margin-map:(
   margin-left: 0;
 }
 
-@mixin generator-margin($inList,$inDirection:'m',$rem:50){
+
+@mixin generator-margin($inList,$inDirection:'m'){
   $mapValue:map_get($margin-map,$inDirection);
   $typeof:type-of($mapValue);
 
@@ -26,7 +27,7 @@ $margin-map:(
         &#{$i}{
           &,
           &_>*{
-            #{$mapValue}: to-rem-value($i,$rem);
+            #{$mapValue}:#{$i}px;
           }
         }
       }
@@ -39,7 +40,7 @@ $margin-map:(
           &_>*{
             //mapValue is a `list`
             @each $mapItem in $mapValue{
-              #{$mapItem}: to-rem-value($i,$rem);
+              #{$mapItem}:#{$i}px;
             }
           }
         }
@@ -75,7 +76,4 @@ $margin-map:(
 @mixin generator-margin-my($inList){
   @include generator-margin($inList,'my');
 }
-
-
-
 /*margin End*/

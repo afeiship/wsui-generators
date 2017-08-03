@@ -2,15 +2,15 @@
 @import "bower_components/webkit-sass-functions/dist/webkit-sass-functions.scss";
 /* init end*/
 
-/*color Start*/
-@mixin generator-border-color($inMap,$inPrefix:'.bdc-'){
+/*background-color Start*/
+@mixin generator-background-color($inMap,$inPrefix:'.bg-'){
   @each $name,$color in $inMap{
     #{$inPrefix}#{$name}{
-      border-color:#{$color};
+      background-color:#{$color};
     }
   }
 }
-/*color End*/
+/*background-color End*/
 
 /*blank Start*/
 .blank {
@@ -20,7 +20,20 @@
   clear: both;
 }
 
-@mixin generator-blank($inList,$inPrefix:'.blank-',$rem:50){
+
+@mixin generator-blank($inList,$inPrefix:'.blank-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        height:#{$i}px;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+
+@mixin generator-blank-rem($inList,$inPrefix:'.blank-rem-',$rem:50){
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
@@ -35,7 +48,7 @@
 /*blank End*/
 
 /*border-color Start*/
-@mixin generator-border-color($inMap,$inPrefix:'.bg-'){
+@mixin generator-border-color($inMap,$inPrefix:'.bdc-'){
   @each $name,$color in $inMap{
     #{$inPrefix}#{$name}{
       border-color:#{$color};
@@ -67,7 +80,17 @@
 /*color End*/
 
 /*font-size Start*/
-@mixin generator-font-size($inList,$inPrefix:'.f-',$rem:50) {
+@mixin generator-font-size($inList,$inPrefix:'.f-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        font-size:#{$i}px;
+      }
+    }
+  }
+}
+
+@mixin generator-font-size-rem($inList,$inPrefix:'.f-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -76,7 +99,6 @@
     }
   }
 }
-
 /*font-size End*/
 
 /*grid Start*/
@@ -115,7 +137,19 @@
 /*grid End*/
 
 /*line Start*/
-@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-',$rem:50) {
+@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}px;
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+@mixin generator-line-rem($inList,$inColor:#ccc,$inPrefix:'.line-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -160,7 +194,28 @@
 /*line-clamp End*/
 
 /*line-height Start*/
-@mixin generator-line-height($inList,$inPrefix:'.lh-',$rem:50) {
+@mixin generator-line-height($inList,$inPrefix:'.lh-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        line-height: #{$i}px;
+      }
+    }
+  }
+}
+
+@mixin generator-hlh($inList,$inPrefix:'.hlh-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}px;
+        line-height: #{$i}px;
+      }
+    }
+  }
+}
+
+@mixin generator-line-height-rem($inList,$inPrefix:'.lh-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -170,7 +225,7 @@
   }
 }
 
-@mixin generator-hlh($inList,$inPrefix:'.hlh-',$rem:50) {
+@mixin generator-hlh-rem($inList,$inPrefix:'.hlh-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -200,7 +255,8 @@ $margin-map:(
   margin-left: 0;
 }
 
-@mixin generator-margin($inList,$inDirection:'m',$rem:50){
+
+@mixin generator-margin($inList,$inDirection:'m'){
   $mapValue:map_get($margin-map,$inDirection);
   $typeof:type-of($mapValue);
 
@@ -210,7 +266,7 @@ $margin-map:(
         &#{$i}{
           &,
           &_>*{
-            #{$mapValue}: to-rem-value($i,$rem);
+            #{$mapValue}:#{$i}px;
           }
         }
       }
@@ -223,7 +279,7 @@ $margin-map:(
           &_>*{
             //mapValue is a `list`
             @each $mapItem in $mapValue{
-              #{$mapItem}: to-rem-value($i,$rem);
+              #{$mapItem}:#{$i}px;
             }
           }
         }
@@ -259,9 +315,6 @@ $margin-map:(
 @mixin generator-margin-my($inList){
   @include generator-margin($inList,'my');
 }
-
-
-
 /*margin End*/
 
 /*padding Start*/
@@ -282,7 +335,7 @@ $padding-map: (
   padding-left: 0;
 }
 
-@mixin generator-padding($inList,$inDirection:'p',$rem:50) {
+@mixin generator-padding($inList,$inDirection:'p') {
   $mapValue: map_get($padding-map,$inDirection);
   $typeof: type-of($mapValue);
 
@@ -292,7 +345,7 @@ $padding-map: (
         &#{$i} {
           &,
           &_>*{
-            #{$mapValue}: to-rem-value($i,$rem);
+            #{$mapValue}: #{$i}px;
           }
         }
       }
@@ -306,7 +359,7 @@ $padding-map: (
           &_>*{
             //mapValue is a `list`
             @each $mapItem in $mapValue {
-              #{$mapItem}: to-rem-value($i,$rem);
+              #{$mapItem}: #{$i}px;
             }
           }
         }

@@ -6,7 +6,20 @@
   clear: both;
 }
 
-@mixin generator-blank($inList,$inPrefix:'.blank-',$rem:50){
+
+@mixin generator-blank($inList,$inPrefix:'.blank-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        height:#{$i}px;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+
+@mixin generator-blank-rem($inList,$inPrefix:'.blank-rem-',$rem:50){
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{

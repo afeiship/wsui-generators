@@ -1,5 +1,17 @@
 /*line Start*/
-@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-',$rem:50) {
+@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}px;
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+@mixin generator-line-rem($inList,$inColor:#ccc,$inPrefix:'.line-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {

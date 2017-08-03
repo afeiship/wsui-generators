@@ -1,5 +1,5 @@
 /*border-color Start*/
-@mixin generator-border-color($inMap,$inPrefix:'.bg-'){
+@mixin generator-border-color($inMap,$inPrefix:'.bdc-'){
   @each $name,$color in $inMap{
     #{$inPrefix}#{$name}{
       border-color:#{$color};

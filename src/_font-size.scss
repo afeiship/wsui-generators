@@ -1,5 +1,15 @@
 /*font-size Start*/
-@mixin generator-font-size($inList,$inPrefix:'.f-',$rem:50) {
+@mixin generator-font-size($inList,$inPrefix:'.f-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        font-size:#{$i}px;
+      }
+    }
+  }
+}
+
+@mixin generator-font-size-rem($inList,$inPrefix:'.f-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -8,5 +18,4 @@
     }
   }
 }
-
 /*font-size End*/
