@@ -12,6 +12,7 @@
     "test": "gulp test"
   },
   "license": "MIT",
+  "main":"dist/webkit-sass-generators.scss",
   "devDependencies": {
     "del": "^2.2.1",
     "gulp": "^3.9.1",
