@@ -9,10 +9,10 @@ $margin-map:(
   my:(margin-top,margin-bottom)
 );
 
-.mr_->*:last-child{
+.mr__>*:last-child{
   margin-right: 0;
 }
-.ml_->*:first-child{
+.ml__>*:first-child{
   margin-left: 0;
 }
 
