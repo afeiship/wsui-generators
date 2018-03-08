@@ -37,13 +37,13 @@ $line-clamp:(1,2,3,4,5);
 @include generator-box($box-list,'mx');
 @include generator-box($box-list,'my');
 
-@include generator-box-rem($box-list,'p');
-@include generator-box-rem($box-list,'pt');
-@include generator-box-rem($box-list,'pr');
-@include generator-box-rem($box-list,'pl');
-@include generator-box-rem($box-list,'pb');
-@include generator-box-rem($box-list,'px');
-@include generator-box-rem($box-list,'py');
+@include generator-box-rem($box-list,'p', 50);
+@include generator-box-rem($box-list,'pt', 50);
+@include generator-box-rem($box-list,'pr', 50);
+@include generator-box-rem($box-list,'pl', 50);
+@include generator-box-rem($box-list,'pb', 50);
+@include generator-box-rem($box-list,'px', 50);
+@include generator-box-rem($box-list,'py', 50);
 
 //Generate your own grid:
 @include generator-grid(12,'.wk-row','.wk-col-');
