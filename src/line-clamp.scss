@@ -1,18 +1,15 @@
 /*line-clamp Start*/
-.line-clamp {
+%line-clamp {
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
+
 @mixin line-clamp($inLine) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
-  display: -webkit-box;
+  @extend %line-clamp;
   -webkit-line-clamp: $inLine;
-  -webkit-box-orient: vertical;
 }
 
 
@@ -21,7 +18,7 @@
     @each $i in $inList{
       &#{$i}{
         -webkit-line-clamp: $i;
-        @extend .line-clamp;
+        @extend %line-clamp;
       }
     }
   }

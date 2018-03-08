@@ -1,4 +1,3 @@
-@import "../bower_components/webkit-sass-functions/dist/webkit-sass-functions";
 @import "../dist/webkit-sass-generators.scss";
 //test color-map
 $color-map: (
@@ -9,8 +8,7 @@ $color-map: (
   f:#fff
 );
 $width-list:(1,2,3,4,5,6,7,8,9);
-$margin-list:(1,2,3,4,5,6,7,8,9);
-$padding-list:(1,2,3,4,5,6,7,8,90,100);
+$box-list:(1,2,3,4,5,6,7,8,9);
 
 //Generate a list:
 $data-src:generate-list(1,20);
@@ -26,27 +24,26 @@ $line-clamp:(1,2,3,4,5);
 //Generate width/blank/font-size/border-radius:
 @include generator-width-w1($data-src,'.w1__');
 @include generator-width-wp($width-list,'.wp__');
-@include generator-blank($width-list,'.blk__',$rem:px);
-@include generator-font-size($font-list,'.f__',$rem:px);
+@include generator-blank($width-list,'.blk__');
+@include generator-font-size($font-list,'.f__');
 @include generator-border-radius($border-radius-list,'.bdr__');
 
 //Generate margin:
-@include generator-margin($margin-list,'m');
-@include generator-margin($margin-list,'mt');
-@include generator-margin($margin-list,'mr');
-@include generator-margin($margin-list,'ml');
-@include generator-margin($margin-list,'mb');
-@include generator-margin($margin-list,'mx');
-@include generator-margin($margin-list,'my');
+@include generator-box($box-list,'m');
+@include generator-box($box-list,'mt');
+@include generator-box($box-list,'mr');
+@include generator-box($box-list,'ml');
+@include generator-box($box-list,'mb');
+@include generator-box($box-list,'mx');
+@include generator-box($box-list,'my');
 
-//Generate padding:
-@include generator-padding($padding-list,'p');
-@include generator-padding($padding-list,'pt');
-@include generator-padding($padding-list,'pr');
-@include generator-padding($padding-list,'pl');
-@include generator-padding($padding-list,'pb');
-@include generator-padding($padding-list,'px');
-@include generator-padding($padding-list,'py');
+@include generator-box-rem($box-list,'p');
+@include generator-box-rem($box-list,'pt');
+@include generator-box-rem($box-list,'pr');
+@include generator-box-rem($box-list,'pl');
+@include generator-box-rem($box-list,'pb');
+@include generator-box-rem($box-list,'px');
+@include generator-box-rem($box-list,'py');
 
 //Generate your own grid:
 @include generator-grid(12,'.wk-row','.wk-col-');

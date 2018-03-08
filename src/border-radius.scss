@@ -8,4 +8,14 @@
     }
   }
 }
+
+@mixin generator-border-radius-rem($inList,$inPrefix:'.bdr-rem-', $rem: 50){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        border-radius: to-rem-value($i,$rem);
+      }
+    }
+  }
+}
 /*border-radius End*/
