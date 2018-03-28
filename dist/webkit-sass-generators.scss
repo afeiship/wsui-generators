@@ -336,6 +336,12 @@ $box-map:(
 .ml__>*:first-child{
   margin-left: 0;
 }
+.mt__>*:first-child{
+  margin-top: 0;
+}
+.mb__>*:last-child{
+  margin-bottom: 0;
+}
 /*margin End*/
 
 /*padding Start*/
