@@ -5,4 +5,10 @@
 .pl__>*:first-child{
   padding-left: 0;
 }
+.pt__>*:first-child{
+  padding-top: 0;
+}
+.pb__>*:last-child{
+  padding-bottom: 0;
+}
 /*padding End*/
