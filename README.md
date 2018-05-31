@@ -63,6 +63,12 @@ $line-clamp:(1,2,3,4,5);
 }
 ```
 
+## some problem:
+```sass
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+```
 
 ## resources:
 + http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
