@@ -37,7 +37,7 @@
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        height:#{$i}rpx;
+        height: to-rpx($i);
         @extend .blank;
       }
     }
@@ -86,7 +86,7 @@
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        border-radius: #{$i}rpx;
+        border-radius: to-rpx($i);
       }
     }
   }
@@ -165,7 +165,7 @@ $box-map:(
     .#{$inDirection} {
       @each $i in $inList{
         &#{$i}{
-          #{$mapValue}:#{$i}rpx;
+          #{$mapValue}:to-rpx($i);
         }
       }
     }
@@ -175,7 +175,7 @@ $box-map:(
         &#{$i}{
           //mapValue is a `list`
           @each $mapItem in $mapValue {
-            #{$mapItem}: #{$i}rpx;
+            #{$mapItem}: to-rpx($i);
           }
         }
       }
@@ -245,7 +245,7 @@ $box-map:(
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        font-size:#{$i}rpx;
+        font-size:to-rpx($i);
       }
     }
   }
@@ -395,7 +395,7 @@ $box-map:(
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        line-height: #{$i}rpx;
+        line-height: to-rpx($i);
       }
     }
   }
@@ -405,8 +405,8 @@ $box-map:(
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: #{$i}rpx;
-        line-height: #{$i}rpx;
+        height: to-rpx($i);
+        line-height: to-rpx($i);
       }
     }
   }
