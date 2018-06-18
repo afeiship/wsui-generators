@@ -1,4 +1,5 @@
 /*line-height Start*/
+// NORMAL
 @mixin generator-line-height($inList,$inPrefix:'.lh-') {
   #{$inPrefix} {
     @each $i in $inList {
@@ -20,6 +21,29 @@
   }
 }
 
+// Weapp
+@mixin generator-line-height-rpx($inList,$inPrefix:'.lh-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        line-height: #{$i}rpx;
+      }
+    }
+  }
+}
+
+@mixin generator-hlh-rpx($inList,$inPrefix:'.hlh-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}rpx;
+        line-height: #{$i}rpx;
+      }
+    }
+  }
+}
+
+// Mobile
 @mixin generator-line-height-rem($inList,$inPrefix:'.lh-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {

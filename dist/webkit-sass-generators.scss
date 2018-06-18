@@ -20,7 +20,7 @@
   clear: both;
 }
 
-
+// NORMAL
 @mixin generator-blank($inList,$inPrefix:'.blank-'){
   #{$inPrefix} {
     @each $i in $inList{
@@ -32,7 +32,19 @@
   }
 }
 
+// Weapp
+@mixin generator-blank-rpx($inList,$inPrefix:'.blank-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        height:#{$i}rpx;
+        @extend .blank;
+      }
+    }
+  }
+}
 
+// Mobile
 @mixin generator-blank-rem($inList,$inPrefix:'.blank-rem-',$rem:50){
   #{$inPrefix} {
     @each $i in $inList{
@@ -58,6 +70,7 @@
 /*border-color End*/
 
 /*border-radius Start*/
+// NORMAL
 @mixin generator-border-radius($inList,$inPrefix:'.bdr-'){
   #{$inPrefix} {
     @each $i in $inList{
@@ -68,6 +81,18 @@
   }
 }
 
+// Weapp
+@mixin generator-border-radius-rpx($inList,$inPrefix:'.bdr-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        border-radius: #{$i}rpx;
+      }
+    }
+  }
+}
+
+// Mobile
 @mixin generator-border-radius-rem($inList,$inPrefix:'.bdr-rem-', $rem: 50){
   #{$inPrefix} {
     @each $i in $inList{
@@ -97,6 +122,7 @@ $box-map:(
   py:(padding-top,padding-bottom)
 );
 
+// NORMAL
 @mixin generator-box($inList,$inDirection:'m'){
   $mapValue:map_get($box-map,$inDirection);
   $typeof:type-of($mapValue);
@@ -129,6 +155,41 @@ $box-map:(
   }
 }
 
+
+// Weapp
+@mixin generator-box-rpx($inList,$inDirection:'m'){
+  $mapValue:map_get($box-map,$inDirection);
+  $typeof:type-of($mapValue);
+
+  @if $typeof =='string'{
+    .#{$inDirection} {
+      @each $i in $inList{
+        &#{$i}{
+          &,
+          &_>*{
+            #{$mapValue}:#{$i}rpx;
+          }
+        }
+      }
+    }
+  }@else{
+    .#{$inDirection} {
+      @each $i in $inList{
+        &#{$i}{
+          &,
+          &_>*{
+            //mapValue is a `list`
+            @each $mapItem in $mapValue {
+              #{$mapItem}: #{$i}rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile
 @mixin generator-box-rem($inList, $inDirection:'m', $rem: 50){
   $mapValue:map_get($box-map,$inDirection);
   $typeof:type-of($mapValue);
@@ -173,6 +234,8 @@ $box-map:(
 /*color End*/
 
 /*font-size Start*/
+
+// NORMAL
 @mixin generator-font-size($inList,$inPrefix:'.f-'){
   #{$inPrefix} {
     @each $i in $inList{
@@ -183,6 +246,18 @@ $box-map:(
   }
 }
 
+// Weapp
+@mixin generator-font-size-rpx($inList,$inPrefix:'.f-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        font-size:#{$i}rpx;
+      }
+    }
+  }
+}
+
+// Mobile
 @mixin generator-font-size-rem($inList,$inPrefix:'.f-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
@@ -230,6 +305,7 @@ $box-map:(
 /*grid End*/
 
 /*line Start*/
+// NORMAL
 @mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
   #{$inPrefix} {
     @each $i in $inList {
@@ -242,6 +318,20 @@ $box-map:(
   }
 }
 
+// Weapp
+@mixin generator-line-rpx($inList,$inColor:#ccc,$inPrefix:'.line-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}rpx;
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+// Mobile
 @mixin generator-line-rem($inList,$inColor:#ccc,$inPrefix:'.line-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
@@ -284,6 +374,7 @@ $box-map:(
 /*line-clamp End*/
 
 /*line-height Start*/
+// NORMAL
 @mixin generator-line-height($inList,$inPrefix:'.lh-') {
   #{$inPrefix} {
     @each $i in $inList {
@@ -305,6 +396,29 @@ $box-map:(
   }
 }
 
+// Weapp
+@mixin generator-line-height-rpx($inList,$inPrefix:'.lh-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        line-height: #{$i}rpx;
+      }
+    }
+  }
+}
+
+@mixin generator-hlh-rpx($inList,$inPrefix:'.hlh-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}rpx;
+        line-height: #{$i}rpx;
+      }
+    }
+  }
+}
+
+// Mobile
 @mixin generator-line-height-rem($inList,$inPrefix:'.lh-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {

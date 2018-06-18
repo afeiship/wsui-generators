@@ -1,4 +1,6 @@
 /*font-size Start*/
+
+// NORMAL
 @mixin generator-font-size($inList,$inPrefix:'.f-'){
   #{$inPrefix} {
     @each $i in $inList{
@@ -9,6 +11,18 @@
   }
 }
 
+// Weapp
+@mixin generator-font-size-rpx($inList,$inPrefix:'.f-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        font-size:#{$i}rpx;
+      }
+    }
+  }
+}
+
+// Mobile
 @mixin generator-font-size-rem($inList,$inPrefix:'.f-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {

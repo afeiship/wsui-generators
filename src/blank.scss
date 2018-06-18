@@ -6,7 +6,7 @@
   clear: both;
 }
 
-
+// NORMAL
 @mixin generator-blank($inList,$inPrefix:'.blank-'){
   #{$inPrefix} {
     @each $i in $inList{
@@ -18,7 +18,19 @@
   }
 }
 
+// Weapp
+@mixin generator-blank-rpx($inList,$inPrefix:'.blank-'){
+  #{$inPrefix} {
+    @each $i in $inList{
+      &#{$i}{
+        height:#{$i}rpx;
+        @extend .blank;
+      }
+    }
+  }
+}
 
+// Mobile
 @mixin generator-blank-rem($inList,$inPrefix:'.blank-rem-',$rem:50){
   #{$inPrefix} {
     @each $i in $inList{

@@ -1,4 +1,5 @@
 /*line Start*/
+// NORMAL
 @mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
   #{$inPrefix} {
     @each $i in $inList {
@@ -11,6 +12,20 @@
   }
 }
 
+// Weapp
+@mixin generator-line-rpx($inList,$inColor:#ccc,$inPrefix:'.line-') {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}rpx;
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+// Mobile
 @mixin generator-line-rem($inList,$inColor:#ccc,$inPrefix:'.line-rem-',$rem:50) {
   #{$inPrefix} {
     @each $i in $inList {
