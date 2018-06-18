@@ -16,7 +16,7 @@
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        font-size:to-rpx($i);
+        font-size:to-rpx-value($i);
       }
     }
   }

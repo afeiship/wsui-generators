@@ -15,7 +15,7 @@
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        border-radius: to-rpx($i);
+        border-radius: to-rpx-value($i);
       }
     }
   }

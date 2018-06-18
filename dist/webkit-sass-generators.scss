@@ -37,7 +37,7 @@
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        height: to-rpx($i);
+        height: to-rpx-value($i);
         @extend .blank;
       }
     }
@@ -86,7 +86,7 @@
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        border-radius: to-rpx($i);
+        border-radius: to-rpx-value($i);
       }
     }
   }
@@ -165,7 +165,7 @@ $box-map:(
     .#{$inDirection} {
       @each $i in $inList{
         &#{$i}{
-          #{$mapValue}:to-rpx($i);
+          #{$mapValue}:to-rpx-value($i);
         }
       }
     }
@@ -175,7 +175,7 @@ $box-map:(
         &#{$i}{
           //mapValue is a `list`
           @each $mapItem in $mapValue {
-            #{$mapItem}: to-rpx($i);
+            #{$mapItem}: to-rpx-value($i);
           }
         }
       }
@@ -245,7 +245,7 @@ $box-map:(
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        font-size:to-rpx($i);
+        font-size:to-rpx-value($i);
       }
     }
   }
@@ -317,7 +317,7 @@ $box-map:(
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: #{$i}rpx;
+        height: to-rpx-value($i);
         background-color: $inColor;
         @extend .blank;
       }
@@ -395,7 +395,7 @@ $box-map:(
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        line-height: to-rpx($i);
+        line-height: to-rpx-value($i);
       }
     }
   }
@@ -405,8 +405,8 @@ $box-map:(
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: to-rpx($i);
-        line-height: to-rpx($i);
+        height: to-rpx-value($i);
+        line-height: to-rpx-value($i);
       }
     }
   }

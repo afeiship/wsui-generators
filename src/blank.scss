@@ -23,7 +23,7 @@
   #{$inPrefix} {
     @each $i in $inList{
       &#{$i}{
-        height: to-rpx($i);
+        height: to-rpx-value($i);
         @extend .blank;
       }
     }

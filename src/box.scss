@@ -59,7 +59,7 @@ $box-map:(
     .#{$inDirection} {
       @each $i in $inList{
         &#{$i}{
-          #{$mapValue}:to-rpx($i);
+          #{$mapValue}:to-rpx-value($i);
         }
       }
     }
@@ -69,7 +69,7 @@ $box-map:(
         &#{$i}{
           //mapValue is a `list`
           @each $mapItem in $mapValue {
-            #{$mapItem}: to-rpx($i);
+            #{$mapItem}: to-rpx-value($i);
           }
         }
       }

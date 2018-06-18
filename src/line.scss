@@ -17,7 +17,7 @@
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: #{$i}rpx;
+        height: to-rpx-value($i);
         background-color: $inColor;
         @extend .blank;
       }
