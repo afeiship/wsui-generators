@@ -1,8 +1,8 @@
 /*background-color Start*/
-@mixin generator-background-color($inMap,$inPrefix:'.bg-'){
-  @each $name,$color in $inMap{
-    #{$inPrefix}#{$name}{
-      background-color:#{$color};
+@mixin generator-background-color($inMap, $inPrefix: ".bg-") {
+  @each $name, $color in $inMap {
+    #{$inPrefix}#{$name} {
+      background-color: #{$color};
     }
   }
 }

@@ -1,8 +1,8 @@
 /*color Start*/
-@mixin generator-color($inMap,$inPrefix:'.c-'){
-  @each $name,$color in $inMap{
-    #{$inPrefix}#{$name}{
-      color:#{$color};
+@mixin generator-color($inMap, $inPrefix: ".c-") {
+  @each $name, $color in $inMap {
+    #{$inPrefix}#{$name} {
+      color: #{$color};
     }
   }
 }

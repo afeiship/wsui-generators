@@ -3,18 +3,24 @@
 /*black End*/
 /*debug Start*/
 /*debug End*/
+/*dynamic-text-color Start*/
+/*dynamic-text-color End*/
 /*first Start*/
 /*first End*/
 /*generate-list Start*/
 /*generate-list End*/
 /*last Start*/
 /*last End*/
+/*map-deep-get Start*/
+/*map-deep-get End*/
 /*purge Start*/
 /*purge End*/
 /*rem Start*/
 /*rem End*/
 /*remove-duplicates Start*/
 /*remove-duplicates End*/
+/*rpx Start*/
+/*rpx End*/
 /*strip-units Start*/
 /*strip-units End*/
 /* init end*/
@@ -40,7 +46,7 @@
 /*font-size Start*/
 /*font-size End*/
 /*grid Start*/
-.dib-col, .wk-col-1, .wk-col-2, .wk-col-3, .wk-col-4, .wk-col-5, .wk-col-6, .wk-col-7, .wk-col-8, .wk-col-9, .wk-col-10, .wk-col-11, .wk-col-12 {
+.dib-col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
   width: 100%;
   display: inline-block;
   font-size: 16px;
@@ -61,26 +67,6 @@
 /*line-clamp End*/
 /*line-height Start*/
 /*line-height End*/
-/*margin Start*/
-.mr__ > *:last-child {
-  margin-right: 0;
-}
-
-.ml__ > *:first-child {
-  margin-left: 0;
-}
-
-/*margin End*/
-/*padding Start*/
-.pr__ > *:last-child {
-  padding-right: 0;
-}
-
-.pl__ > *:first-child {
-  padding-left: 0;
-}
-
-/*padding End*/
 /*width Start*/
 /*width End*/
 .c-0 {
@@ -313,6 +299,38 @@
 
 .f-30 {
   font-size: 30px;
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
 }
 
 .bdr-1 {
@@ -1001,11 +1019,11 @@
   padding-bottom: 0.18rem;
 }
 
-.wk-row {
+.row {
   font-size: 0;
 }
 
-.wk-col-1 {
+.col-1 {
   padding-left: 1em;
   padding-right: 1em;
   width: 8.33333%;
@@ -1016,7 +1034,7 @@
   margin-left: 91.66667%;
 }
 
-.wk-col-2 {
+.col-2 {
   padding-left: 1em;
   padding-right: 1em;
   width: 16.66667%;
@@ -1027,7 +1045,7 @@
   margin-left: 83.33333%;
 }
 
-.wk-col-3 {
+.col-3 {
   padding-left: 1em;
   padding-right: 1em;
   width: 25%;
@@ -1038,7 +1056,7 @@
   margin-left: 75%;
 }
 
-.wk-col-4 {
+.col-4 {
   padding-left: 1em;
   padding-right: 1em;
   width: 33.33333%;
@@ -1049,7 +1067,7 @@
   margin-left: 66.66667%;
 }
 
-.wk-col-5 {
+.col-5 {
   padding-left: 1em;
   padding-right: 1em;
   width: 41.66667%;
@@ -1060,7 +1078,7 @@
   margin-left: 58.33333%;
 }
 
-.wk-col-6 {
+.col-6 {
   padding-left: 1em;
   padding-right: 1em;
   width: 50%;
@@ -1071,7 +1089,7 @@
   margin-left: 50%;
 }
 
-.wk-col-7 {
+.col-7 {
   padding-left: 1em;
   padding-right: 1em;
   width: 58.33333%;
@@ -1082,7 +1100,7 @@
   margin-left: 41.66667%;
 }
 
-.wk-col-8 {
+.col-8 {
   padding-left: 1em;
   padding-right: 1em;
   width: 66.66667%;
@@ -1093,7 +1111,7 @@
   margin-left: 33.33333%;
 }
 
-.wk-col-9 {
+.col-9 {
   padding-left: 1em;
   padding-right: 1em;
   width: 75%;
@@ -1104,7 +1122,7 @@
   margin-left: 25%;
 }
 
-.wk-col-10 {
+.col-10 {
   padding-left: 1em;
   padding-right: 1em;
   width: 83.33333%;
@@ -1115,7 +1133,7 @@
   margin-left: 16.66667%;
 }
 
-.wk-col-11 {
+.col-11 {
   padding-left: 1em;
   padding-right: 1em;
   width: 91.66667%;
@@ -1126,7 +1144,7 @@
   margin-left: 8.33333%;
 }
 
-.wk-col-12 {
+.col-12 {
   padding-left: 1em;
   padding-right: 1em;
   width: 100%;

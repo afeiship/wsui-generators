@@ -12,11 +12,10 @@
   -webkit-line-clamp: $inLine;
 }
 
-
-@mixin generator-line-clamp($inList,$inPrefix:'.lc-'){
+@mixin generator-line-clamp($inList, $inPrefix: ".lc-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
+    @each $i in $inList {
+      &#{$i} {
         -webkit-line-clamp: $i;
         @extend %line-clamp;
       }

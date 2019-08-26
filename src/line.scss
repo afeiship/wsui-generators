@@ -1,6 +1,6 @@
 /*line Start*/
 // NORMAL
-@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
+@mixin generator-line($inList, $inColor: #ccc, $inPrefix: ".line-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -13,7 +13,7 @@
 }
 
 // Weapp
-@mixin generator-line-rpx($inList,$inColor:#ccc,$inPrefix:'.line-') {
+@mixin generator-line-rpx($inList, $inColor: #ccc, $inPrefix: ".line-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -26,11 +26,11 @@
 }
 
 // Mobile
-@mixin generator-line-rem($inList,$inColor:#ccc,$inPrefix:'.line-rem-',$rem:50) {
+@mixin generator-line-rem($inList, $inColor: #ccc, $inPrefix: ".line-rem-", $rem: 50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: to-rem-value($i,$rem);
+        height: to-rem-value($i, $rem);
         background-color: $inColor;
         @extend .blank;
       }

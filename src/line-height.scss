@@ -1,6 +1,6 @@
 /*line-height Start*/
 // NORMAL
-@mixin generator-line-height($inList,$inPrefix:'.lh-') {
+@mixin generator-line-height($inList, $inPrefix: ".lh-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -10,7 +10,7 @@
   }
 }
 
-@mixin generator-hlh($inList,$inPrefix:'.hlh-') {
+@mixin generator-hlh($inList, $inPrefix: ".hlh-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -22,7 +22,7 @@
 }
 
 // Weapp
-@mixin generator-line-height-rpx($inList,$inPrefix:'.lh-') {
+@mixin generator-line-height-rpx($inList, $inPrefix: ".lh-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -32,7 +32,7 @@
   }
 }
 
-@mixin generator-hlh-rpx($inList,$inPrefix:'.hlh-') {
+@mixin generator-hlh-rpx($inList, $inPrefix: ".hlh-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -44,22 +44,22 @@
 }
 
 // Mobile
-@mixin generator-line-height-rem($inList,$inPrefix:'.lh-rem-',$rem:50) {
+@mixin generator-line-height-rem($inList, $inPrefix: ".lh-rem-", $rem: 50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        line-height: to-rem-value($i,$rem);
+        line-height: to-rem-value($i, $rem);
       }
     }
   }
 }
 
-@mixin generator-hlh-rem($inList,$inPrefix:'.hlh-rem-',$rem:50) {
+@mixin generator-hlh-rem($inList, $inPrefix: ".hlh-rem-", $rem: 50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: to-rem-value($i,$rem);
-        line-height: to-rem-value($i,$rem);
+        height: to-rem-value($i, $rem);
+        line-height: to-rem-value($i, $rem);
       }
     }
   }

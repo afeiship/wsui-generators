@@ -1,43 +1,55 @@
 /*box Start*/
-$box-map:(
-  m:margin,
-  mt:margin-top,
-  mr:margin-right,
-  mb:margin-bottom,
-  ml:margin-left,
-  mx:(margin-left,margin-right),
-  my:(margin-top,margin-bottom),
-  p:padding,
-  pt:padding-top,
-  pr:padding-right,
-  pb:padding-bottom,
-  pl:padding-left,
-  px:(padding-left,padding-right),
-  py:(padding-top,padding-bottom)
+$box-map: (
+  m: margin,
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  mx: (
+    margin-left,
+    margin-right
+  ),
+  my: (
+    margin-top,
+    margin-bottom
+  ),
+  p: padding,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+  px: (
+    padding-left,
+    padding-right
+  ),
+  py: (
+    padding-top,
+    padding-bottom
+  )
 );
 
 // NORMAL
-@mixin generator-box($inList,$inDirection:'m'){
-  $mapValue:map_get($box-map,$inDirection);
-  $typeof:type-of($mapValue);
+@mixin generator-box($inList, $inDirection: "m") {
+  $mapValue: map_get($box-map, $inDirection);
+  $typeof: type-of($mapValue);
 
-  @if $typeof =='string'{
+  @if $typeof == "string" {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           &,
-          &_>*{
-            #{$mapValue}:#{$i}px;
+          &_ > * {
+            #{$mapValue}: #{$i}px;
           }
         }
       }
     }
-  }@else{
+  } @else {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           &,
-          &_>*{
+          &_ > * {
             //mapValue is a `list`
             @each $mapItem in $mapValue {
               #{$mapItem}: #{$i}px;
@@ -49,24 +61,23 @@ $box-map:(
   }
 }
 
-
 // Weapp
-@mixin generator-box-rpx($inList,$inDirection:'m'){
-  $mapValue:map_get($box-map,$inDirection);
-  $typeof:type-of($mapValue);
+@mixin generator-box-rpx($inList, $inDirection: "m") {
+  $mapValue: map_get($box-map, $inDirection);
+  $typeof: type-of($mapValue);
 
-  @if $typeof =='string'{
+  @if $typeof == "string" {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
-          #{$mapValue}:to-rpx-value($i);
+      @each $i in $inList {
+        &#{$i} {
+          #{$mapValue}: to-rpx-value($i);
         }
       }
     }
-  }@else{
+  } @else {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           //mapValue is a `list`
           @each $mapItem in $mapValue {
             #{$mapItem}: to-rpx-value($i);
@@ -78,30 +89,30 @@ $box-map:(
 }
 
 // Mobile
-@mixin generator-box-rem($inList, $inDirection:'m', $rem: 50){
-  $mapValue:map_get($box-map,$inDirection);
-  $typeof:type-of($mapValue);
+@mixin generator-box-rem($inList, $inDirection: "m", $rem: 50) {
+  $mapValue: map_get($box-map, $inDirection);
+  $typeof: type-of($mapValue);
 
-  @if $typeof =='string'{
+  @if $typeof == "string" {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           &,
-          &_>*{
-            #{$mapValue}: to-rem-value($i,$rem);
+          &_ > * {
+            #{$mapValue}: to-rem-value($i, $rem);
           }
         }
       }
     }
-  }@else{
+  } @else {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           &,
-          &_>*{
+          &_ > * {
             //mapValue is a `list`
             @each $mapItem in $mapValue {
-              #{$mapItem}: to-rem-value($i,$rem);
+              #{$mapItem}: to-rem-value($i, $rem);
             }
           }
         }

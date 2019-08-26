@@ -7,11 +7,11 @@
 }
 
 // NORMAL
-@mixin generator-blank($inList,$inPrefix:'.blank-'){
+@mixin generator-blank($inList, $inPrefix: ".blank-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        height:#{$i}px;
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}px;
         @extend .blank;
       }
     }
@@ -19,10 +19,10 @@
 }
 
 // Weapp
-@mixin generator-blank-rpx($inList,$inPrefix:'.blank-'){
+@mixin generator-blank-rpx($inList, $inPrefix: ".blank-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
+    @each $i in $inList {
+      &#{$i} {
         height: to-rpx-value($i);
         @extend .blank;
       }
@@ -31,16 +31,15 @@
 }
 
 // Mobile
-@mixin generator-blank-rem($inList,$inPrefix:'.blank-rem-',$rem:50){
+@mixin generator-blank-rem($inList, $inPrefix: ".blank-rem-", $rem: 50) {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        height: to-rem-value($i,$rem);
+    @each $i in $inList {
+      &#{$i} {
+        height: to-rem-value($i, $rem);
         @extend .blank;
       }
     }
   }
 }
-
 
 /*blank End*/

@@ -3,10 +3,10 @@
 /* init end*/
 
 /*background-color Start*/
-@mixin generator-background-color($inMap,$inPrefix:'.bg-'){
-  @each $name,$color in $inMap{
-    #{$inPrefix}#{$name}{
-      background-color:#{$color};
+@mixin generator-background-color($inMap, $inPrefix: ".bg-") {
+  @each $name, $color in $inMap {
+    #{$inPrefix}#{$name} {
+      background-color: #{$color};
     }
   }
 }
@@ -21,11 +21,11 @@
 }
 
 // NORMAL
-@mixin generator-blank($inList,$inPrefix:'.blank-'){
+@mixin generator-blank($inList, $inPrefix: ".blank-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        height:#{$i}px;
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}px;
         @extend .blank;
       }
     }
@@ -33,10 +33,10 @@
 }
 
 // Weapp
-@mixin generator-blank-rpx($inList,$inPrefix:'.blank-'){
+@mixin generator-blank-rpx($inList, $inPrefix: ".blank-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
+    @each $i in $inList {
+      &#{$i} {
         height: to-rpx-value($i);
         @extend .blank;
       }
@@ -45,25 +45,24 @@
 }
 
 // Mobile
-@mixin generator-blank-rem($inList,$inPrefix:'.blank-rem-',$rem:50){
+@mixin generator-blank-rem($inList, $inPrefix: ".blank-rem-", $rem: 50) {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        height: to-rem-value($i,$rem);
+    @each $i in $inList {
+      &#{$i} {
+        height: to-rem-value($i, $rem);
         @extend .blank;
       }
     }
   }
 }
 
-
 /*blank End*/
 
 /*border-color Start*/
-@mixin generator-border-color($inMap,$inPrefix:'.bdc-'){
-  @each $name,$color in $inMap{
-    #{$inPrefix}#{$name}{
-      border-color:#{$color};
+@mixin generator-border-color($inMap, $inPrefix: ".bdc-") {
+  @each $name, $color in $inMap {
+    #{$inPrefix}#{$name} {
+      border-color: #{$color};
     }
   }
 }
@@ -71,10 +70,10 @@
 
 /*border-radius Start*/
 // NORMAL
-@mixin generator-border-radius($inList,$inPrefix:'.bdr-'){
+@mixin generator-border-radius($inList, $inPrefix: ".bdr-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
+    @each $i in $inList {
+      &#{$i} {
         border-radius: #{$i}px;
       }
     }
@@ -82,10 +81,10 @@
 }
 
 // Weapp
-@mixin generator-border-radius-rpx($inList,$inPrefix:'.bdr-'){
+@mixin generator-border-radius-rpx($inList, $inPrefix: ".bdr-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
+    @each $i in $inList {
+      &#{$i} {
         border-radius: to-rpx-value($i);
       }
     }
@@ -93,11 +92,11 @@
 }
 
 // Mobile
-@mixin generator-border-radius-rem($inList,$inPrefix:'.bdr-rem-', $rem: 50){
+@mixin generator-border-radius-rem($inList, $inPrefix: ".bdr-rem-", $rem: 50) {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        border-radius: to-rem-value($i,$rem);
+    @each $i in $inList {
+      &#{$i} {
+        border-radius: to-rem-value($i, $rem);
       }
     }
   }
@@ -105,45 +104,57 @@
 /*border-radius End*/
 
 /*box Start*/
-$box-map:(
-  m:margin,
-  mt:margin-top,
-  mr:margin-right,
-  mb:margin-bottom,
-  ml:margin-left,
-  mx:(margin-left,margin-right),
-  my:(margin-top,margin-bottom),
-  p:padding,
-  pt:padding-top,
-  pr:padding-right,
-  pb:padding-bottom,
-  pl:padding-left,
-  px:(padding-left,padding-right),
-  py:(padding-top,padding-bottom)
+$box-map: (
+  m: margin,
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  mx: (
+    margin-left,
+    margin-right
+  ),
+  my: (
+    margin-top,
+    margin-bottom
+  ),
+  p: padding,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+  px: (
+    padding-left,
+    padding-right
+  ),
+  py: (
+    padding-top,
+    padding-bottom
+  )
 );
 
 // NORMAL
-@mixin generator-box($inList,$inDirection:'m'){
-  $mapValue:map_get($box-map,$inDirection);
-  $typeof:type-of($mapValue);
+@mixin generator-box($inList, $inDirection: "m") {
+  $mapValue: map_get($box-map, $inDirection);
+  $typeof: type-of($mapValue);
 
-  @if $typeof =='string'{
+  @if $typeof == "string" {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           &,
-          &_>*{
-            #{$mapValue}:#{$i}px;
+          &_ > * {
+            #{$mapValue}: #{$i}px;
           }
         }
       }
     }
-  }@else{
+  } @else {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           &,
-          &_>*{
+          &_ > * {
             //mapValue is a `list`
             @each $mapItem in $mapValue {
               #{$mapItem}: #{$i}px;
@@ -155,24 +166,23 @@ $box-map:(
   }
 }
 
-
 // Weapp
-@mixin generator-box-rpx($inList,$inDirection:'m'){
-  $mapValue:map_get($box-map,$inDirection);
-  $typeof:type-of($mapValue);
+@mixin generator-box-rpx($inList, $inDirection: "m") {
+  $mapValue: map_get($box-map, $inDirection);
+  $typeof: type-of($mapValue);
 
-  @if $typeof =='string'{
+  @if $typeof == "string" {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
-          #{$mapValue}:to-rpx-value($i);
+      @each $i in $inList {
+        &#{$i} {
+          #{$mapValue}: to-rpx-value($i);
         }
       }
     }
-  }@else{
+  } @else {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           //mapValue is a `list`
           @each $mapItem in $mapValue {
             #{$mapItem}: to-rpx-value($i);
@@ -184,30 +194,30 @@ $box-map:(
 }
 
 // Mobile
-@mixin generator-box-rem($inList, $inDirection:'m', $rem: 50){
-  $mapValue:map_get($box-map,$inDirection);
-  $typeof:type-of($mapValue);
+@mixin generator-box-rem($inList, $inDirection: "m", $rem: 50) {
+  $mapValue: map_get($box-map, $inDirection);
+  $typeof: type-of($mapValue);
 
-  @if $typeof =='string'{
+  @if $typeof == "string" {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           &,
-          &_>*{
-            #{$mapValue}: to-rem-value($i,$rem);
+          &_ > * {
+            #{$mapValue}: to-rem-value($i, $rem);
           }
         }
       }
     }
-  }@else{
+  } @else {
     .#{$inDirection} {
-      @each $i in $inList{
-        &#{$i}{
+      @each $i in $inList {
+        &#{$i} {
           &,
-          &_>*{
+          &_ > * {
             //mapValue is a `list`
             @each $mapItem in $mapValue {
-              #{$mapItem}: to-rem-value($i,$rem);
+              #{$mapItem}: to-rem-value($i, $rem);
             }
           }
         }
@@ -218,10 +228,10 @@ $box-map:(
 /*box End*/
 
 /*color Start*/
-@mixin generator-color($inMap,$inPrefix:'.c-'){
-  @each $name,$color in $inMap{
-    #{$inPrefix}#{$name}{
-      color:#{$color};
+@mixin generator-color($inMap, $inPrefix: ".c-") {
+  @each $name, $color in $inMap {
+    #{$inPrefix}#{$name} {
+      color: #{$color};
     }
   }
 }
@@ -230,29 +240,29 @@ $box-map:(
 /*font-size Start*/
 
 // NORMAL
-@mixin generator-font-size($inList,$inPrefix:'.f-'){
+@mixin generator-font-size($inList, $inPrefix: ".f-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        font-size:#{$i}px;
+    @each $i in $inList {
+      &#{$i} {
+        font-size: #{$i}px;
       }
     }
   }
 }
 
 // Weapp
-@mixin generator-font-size-rpx($inList,$inPrefix:'.f-'){
+@mixin generator-font-size-rpx($inList, $inPrefix: ".f-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        font-size:to-rpx-value($i);
+    @each $i in $inList {
+      &#{$i} {
+        font-size: to-rpx-value($i);
       }
     }
   }
 }
 
 // Mobile
-@mixin generator-font-size-rem($inList,$inPrefix:'.f-rem-',$rem:50) {
+@mixin generator-font-size-rem($inList, $inPrefix: ".f-rem-", $rem: 50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -263,35 +273,43 @@ $box-map:(
 }
 /*font-size End*/
 
+// fontWeight
+@mixin generator-font-weight($inList, $inPrefix: ".fw-") {
+  @each $value in $inList {
+    #{$inPrefix}#{$value} {
+      font-weight: $value;
+    }
+  }
+}
+
 /*grid Start*/
-.dib-col{
+.dib-col {
   width: 100%;
   display: inline-block;
   font-size: 16px;
 }
-@mixin dib-row () {
+@mixin dib-row() {
   font-size: 0;
 }
 // This is column mixins.
-@mixin dib-col ($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+@mixin dib-col($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
   padding-left: if($first, 0, $gap);
   padding-right: if($last, 0, $gap);
   width: percentage($col/$sum);
   vertical-align: $align;
 }
 
-
-@mixin generator-grid ($sum:12,$row:'.row',$col:'.col-') {
-  #{$row}{
+@mixin generator-grid($sum: 12, $row: ".row", $col: ".col-") {
+  #{$row} {
     @include dib-row;
   }
   @for $i from 1 through $sum {
-    $left:$sum - $i;
-    #{$col}#{$i}{
+    $left: $sum - $i;
+    #{$col}#{$i} {
       @extend .dib-col;
-      @include dib-col($i,$sum);
+      @include dib-col($i, $sum);
     }
-    .offset-#{$left}{
+    .offset-#{$left} {
       margin-left: percentage($left/$sum);
     }
   }
@@ -300,7 +318,7 @@ $box-map:(
 
 /*line Start*/
 // NORMAL
-@mixin generator-line($inList,$inColor:#ccc,$inPrefix:'.line-') {
+@mixin generator-line($inList, $inColor: #ccc, $inPrefix: ".line-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -313,7 +331,7 @@ $box-map:(
 }
 
 // Weapp
-@mixin generator-line-rpx($inList,$inColor:#ccc,$inPrefix:'.line-') {
+@mixin generator-line-rpx($inList, $inColor: #ccc, $inPrefix: ".line-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -326,11 +344,11 @@ $box-map:(
 }
 
 // Mobile
-@mixin generator-line-rem($inList,$inColor:#ccc,$inPrefix:'.line-rem-',$rem:50) {
+@mixin generator-line-rem($inList, $inColor: #ccc, $inPrefix: ".line-rem-", $rem: 50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: to-rem-value($i,$rem);
+        height: to-rem-value($i, $rem);
         background-color: $inColor;
         @extend .blank;
       }
@@ -353,11 +371,10 @@ $box-map:(
   -webkit-line-clamp: $inLine;
 }
 
-
-@mixin generator-line-clamp($inList,$inPrefix:'.lc-'){
+@mixin generator-line-clamp($inList, $inPrefix: ".lc-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
+    @each $i in $inList {
+      &#{$i} {
         -webkit-line-clamp: $i;
         @extend %line-clamp;
       }
@@ -369,7 +386,7 @@ $box-map:(
 
 /*line-height Start*/
 // NORMAL
-@mixin generator-line-height($inList,$inPrefix:'.lh-') {
+@mixin generator-line-height($inList, $inPrefix: ".lh-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -379,7 +396,7 @@ $box-map:(
   }
 }
 
-@mixin generator-hlh($inList,$inPrefix:'.hlh-') {
+@mixin generator-hlh($inList, $inPrefix: ".hlh-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -391,7 +408,7 @@ $box-map:(
 }
 
 // Weapp
-@mixin generator-line-height-rpx($inList,$inPrefix:'.lh-') {
+@mixin generator-line-height-rpx($inList, $inPrefix: ".lh-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -401,7 +418,7 @@ $box-map:(
   }
 }
 
-@mixin generator-hlh-rpx($inList,$inPrefix:'.hlh-') {
+@mixin generator-hlh-rpx($inList, $inPrefix: ".hlh-") {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
@@ -413,22 +430,22 @@ $box-map:(
 }
 
 // Mobile
-@mixin generator-line-height-rem($inList,$inPrefix:'.lh-rem-',$rem:50) {
+@mixin generator-line-height-rem($inList, $inPrefix: ".lh-rem-", $rem: 50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        line-height: to-rem-value($i,$rem);
+        line-height: to-rem-value($i, $rem);
       }
     }
   }
 }
 
-@mixin generator-hlh-rem($inList,$inPrefix:'.hlh-rem-',$rem:50) {
+@mixin generator-hlh-rem($inList, $inPrefix: ".hlh-rem-", $rem: 50) {
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        height: to-rem-value($i,$rem);
-        line-height: to-rem-value($i,$rem);
+        height: to-rem-value($i, $rem);
+        line-height: to-rem-value($i, $rem);
       }
     }
   }
@@ -436,16 +453,16 @@ $box-map:(
 /*line-height End*/
 
 /*width Start*/
-@mixin generator-width-w1($inList,$inPrefix:'.w1-') {
-  @each $value in $inList{
+@mixin generator-width-w1($inList, $inPrefix: ".w1-") {
+  @each $value in $inList {
     #{$inPrefix}#{$value} {
-      width: percentage(1/$value);
+      width: percentage(1 / $value);
     }
   }
 }
 
-@mixin generator-width-wp($inList,$inPrefix:'.wp-') {
-  @each $value in $inList{
+@mixin generator-width-wp($inList, $inPrefix: ".wp-") {
+  @each $value in $inList {
     #{$inPrefix}#{$value} {
       width: percentage($value/10);
     }

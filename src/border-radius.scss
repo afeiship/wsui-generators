@@ -1,9 +1,9 @@
 /*border-radius Start*/
 // NORMAL
-@mixin generator-border-radius($inList,$inPrefix:'.bdr-'){
+@mixin generator-border-radius($inList, $inPrefix: ".bdr-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
+    @each $i in $inList {
+      &#{$i} {
         border-radius: #{$i}px;
       }
     }
@@ -11,10 +11,10 @@
 }
 
 // Weapp
-@mixin generator-border-radius-rpx($inList,$inPrefix:'.bdr-'){
+@mixin generator-border-radius-rpx($inList, $inPrefix: ".bdr-") {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
+    @each $i in $inList {
+      &#{$i} {
         border-radius: to-rpx-value($i);
       }
     }
@@ -22,11 +22,11 @@
 }
 
 // Mobile
-@mixin generator-border-radius-rem($inList,$inPrefix:'.bdr-rem-', $rem: 50){
+@mixin generator-border-radius-rem($inList, $inPrefix: ".bdr-rem-", $rem: 50) {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        border-radius: to-rem-value($i,$rem);
+    @each $i in $inList {
+      &#{$i} {
+        border-radius: to-rem-value($i, $rem);
       }
     }
   }

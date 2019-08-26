@@ -1,14 +1,14 @@
 /*width Start*/
-@mixin generator-width-w1($inList,$inPrefix:'.w1-') {
-  @each $value in $inList{
+@mixin generator-width-w1($inList, $inPrefix: ".w1-") {
+  @each $value in $inList {
     #{$inPrefix}#{$value} {
-      width: percentage(1/$value);
+      width: percentage(1 / $value);
     }
   }
 }
 
-@mixin generator-width-wp($inList,$inPrefix:'.wp-') {
-  @each $value in $inList{
+@mixin generator-width-wp($inList, $inPrefix: ".wp-") {
+  @each $value in $inList {
     #{$inPrefix}#{$value} {
       width: percentage($value/10);
     }

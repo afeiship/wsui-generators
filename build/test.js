@@ -1,5 +1,4 @@
 (function() {
-
   'use strict';
 
   var gulp = require('gulp');
@@ -10,10 +9,13 @@
   });
 
   //styles
-  gulp.task('test',function() {
-    return gulp.src('docs/*.scss')
-      .pipe($.sass({outputStyle: 'expanded'}).on('error', $.sass.logError))
-      .pipe(gulp.dest('docs'));
-  });
-
-}());
+  gulp.task(
+    'test',
+    gulp.parallel(function() {
+      return gulp
+        .src('docs/*.scss')
+        .pipe($.sass({ outputStyle: 'expanded' }).on('error', $.sass.logError))
+        .pipe(gulp.dest('docs'));
+    })
+  );
+})();
