@@ -1,5 +1,5 @@
 {
-  "name": "webkit-sass-generators",
+  "name": "@feizheng/webkit-sass-generators",
   "version": "1.0.0",
   "description": "Webkit sass generator mixins.",
   "homepage": "https://github.com/afeiship/webkit-sass-generators",
@@ -23,6 +23,9 @@
     "yargs": "^4.7.1"
   },
   "dependencies": {
-    "webkit-sass-functions": "github:afeiship/webkit-sass-functions"
+    "@feizheng/webkit-sass-functions": "^1.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

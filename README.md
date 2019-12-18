@@ -1,7 +1,12 @@
 # webkit-sass-generators
 > Webkit sass generator mixins.
 
-## usage:
+## installation
+```shell
+npm i -S @feizheng/webkit-sass-generators
+```
+
+## usage
 ```scss
 @import "../dist/webkit-sass-generators.scss";
 //test color-map
@@ -70,7 +75,7 @@ $line-clamp:(1,2,3,4,5);
   /* autoprefixer: on */
 ```
 
-## resources:
+## resources
 + http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
 + http://sass-lang.com/documentation/Sass/Script/Functions.html
 + https://github.com/HugoGiraudel/SassyStrings
