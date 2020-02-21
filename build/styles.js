@@ -12,7 +12,6 @@
     gulp.parallel(function() {
       return gulp
         .src([
-          'src/init.scss',
           'src/background-color.scss',
           'src/blank.scss',
           'src/border-color.scss',

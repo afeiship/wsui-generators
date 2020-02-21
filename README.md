@@ -6,6 +6,11 @@
 npm i -S @feizheng/webkit-sass-generators
 ```
 
+## update
+```shell
+npm update @feizheng/webkit-sass-generators
+```
+
 ## usage
 ```scss
 @import "../dist/webkit-sass-generators.scss";

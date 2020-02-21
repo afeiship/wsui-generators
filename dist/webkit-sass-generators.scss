@@ -1,7 +1,3 @@
-/* init start*/
-@import "node_modules/@feizheng/webkit-sass-functions/dist/webkit-sass-functions.scss";
-/* init end*/
-
 /*background-color Start*/
 @mixin generator-background-color($inMap, $inPrefix: ".bg-") {
   @each $name, $color in $inMap {
