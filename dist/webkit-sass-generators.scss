@@ -312,47 +312,6 @@ $box-map: (
 }
 /*grid End*/
 
-/*line Start*/
-// NORMAL
-@mixin generator-line($inList, $inColor: #ccc, $inPrefix: ".line-") {
-  #{$inPrefix} {
-    @each $i in $inList {
-      &#{$i} {
-        height: #{$i}px;
-        background-color: $inColor;
-        @extend .blank;
-      }
-    }
-  }
-}
-
-// Weapp
-@mixin generator-line-rpx($inList, $inColor: #ccc, $inPrefix: ".line-") {
-  #{$inPrefix} {
-    @each $i in $inList {
-      &#{$i} {
-        height: to-rpx-value($i);
-        background-color: $inColor;
-        @extend .blank;
-      }
-    }
-  }
-}
-
-// Mobile
-@mixin generator-line-rem($inList, $inColor: #ccc, $inPrefix: ".line-rem-", $rem: 50) {
-  #{$inPrefix} {
-    @each $i in $inList {
-      &#{$i} {
-        height: to-rem-value($i, $rem);
-        background-color: $inColor;
-        @extend .blank;
-      }
-    }
-  }
-}
-/*line End*/
-
 /*line-clamp Start*/
 %line-clamp {
   overflow: hidden;
@@ -447,6 +406,47 @@ $box-map: (
   }
 }
 /*line-height End*/
+
+/*line Start*/
+// NORMAL
+@mixin generator-line($inList, $inColor: #ccc, $inPrefix: ".line-") {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: #{$i}px;
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+// Weapp
+@mixin generator-line-rpx($inList, $inColor: #ccc, $inPrefix: ".line-") {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: to-rpx-value($i);
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+
+// Mobile
+@mixin generator-line-rem($inList, $inColor: #ccc, $inPrefix: ".line-rem-", $rem: 50) {
+  #{$inPrefix} {
+    @each $i in $inList {
+      &#{$i} {
+        height: to-rem-value($i, $rem);
+        background-color: $inColor;
+        @extend .blank;
+      }
+    }
+  }
+}
+/*line End*/
 
 /*width Start*/
 @mixin generator-width-w1($inList, $inPrefix: ".w1-") {
