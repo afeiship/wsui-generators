@@ -1,3 +1,12 @@
+/*!
+ * name: @feizheng/webkit-sass-generators
+ * description: Webkit sass generator mixins.
+ * url: https://github.com/afeiship/webkit-sass-generators
+ * version: 1.2.1
+ * date: 2020-03-23 19:55:02
+ * license: MIT
+ */
+
 /*background-color Start*/
 @mixin generator-background-color($inMap, $inPrefix: ".bg-") {
   @each $name, $color in $inMap {

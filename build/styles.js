@@ -3,7 +3,7 @@
 
   var gulp = require('gulp');
   var $ = require('gulp-load-plugins')({
-    pattern: ['gulp-*', 'gulp.*', 'del']
+    pattern: ['gulp-*', 'gulp.*', 'del', '@feizheng/gulp-*']
   });
 
   //styles
@@ -13,6 +13,7 @@
       return gulp
         .src('src/*.scss')
         .pipe($.concat('index.scss'))
+        .pipe($.feizheng.pkgHeader())
         .pipe(gulp.dest('dist'));
     })
   );

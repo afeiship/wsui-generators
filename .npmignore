@@ -3,3 +3,8 @@ node_modules
 src
 docs
 test
+
+.editorconfig
+.prettierrc
+bower.json
+gulpfile.js

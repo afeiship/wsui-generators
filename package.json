@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/webkit-sass-generators",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Webkit sass generator mixins.",
   "homepage": "https://github.com/afeiship/webkit-sass-generators",
   "author": {
@@ -14,6 +14,7 @@
   "license": "MIT",
   "main": "dist/index.scss",
   "devDependencies": {
+    "@feizheng/gulp-pkg-header": "^1.0.2",
     "del": "^2.2.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.0",
