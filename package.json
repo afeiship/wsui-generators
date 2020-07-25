@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/webkit-sass-generators",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "Webkit sass generator mixins.",
   "homepage": "https://github.com/afeiship/webkit-sass-generators",
   "author": {
@@ -24,7 +24,7 @@
     "yargs": "^4.7.1"
   },
   "dependencies": {
-    "@feizheng/webkit-sass-functions": "^1.0.0"
+    "@feizheng/webkit-sass-functions": "^2.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
