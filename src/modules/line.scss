@@ -1,0 +1,18 @@
+/*line Start*/
+@mixin generator-line($list, $color: #ccc, $rem: px) {
+  $prefix: "." + $wsui-generators-prefix + "line-";
+  %line-color {
+    background-color: $color;
+  }
+
+  #{$prefix} {
+    @each $i in $list {
+      &#{$i} {
+        height: #{$i}px;
+        @extend %space;
+        @extend %line-color;
+      }
+    }
+  }
+}
+/*line End*/

@@ -1,8 +1,8 @@
 {
-  "name": "@feizheng/webkit-sass-generators",
+  "name": "@jswork/wsui-generators",
   "version": "2.0.0",
   "description": "Webkit sass generator mixins.",
-  "homepage": "https://github.com/afeiship/webkit-sass-generators",
+  "homepage": "https://github.com/afeiship/wsui-generators",
   "author": {
     "name": "afei",
     "email": "1290657123@qq.com"
@@ -14,7 +14,7 @@
   "license": "MIT",
   "main": "dist/index.scss",
   "devDependencies": {
-    "@feizheng/gulp-pkg-header": "^1.0.2",
+    "@jswork/gulp-pkg-header": "^1.0.3",
     "del": "^2.2.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.0",
@@ -23,10 +23,11 @@
     "gulp-sass": "^4.0.2",
     "yargs": "^4.7.1"
   },
-  "dependencies": {
-    "@feizheng/webkit-sass-functions": "^2.0.0"
-  },
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@jswork/wsui-functions": "^1.0.1"
   }
 }

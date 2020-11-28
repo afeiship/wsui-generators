@@ -7,14 +7,15 @@
   -webkit-box-orient: vertical;
 }
 
-@mixin line-clamp($inLine) {
+@mixin line-clamp($line) {
   @extend %line-clamp;
-  -webkit-line-clamp: $inLine;
+  -webkit-line-clamp: $line;
 }
 
-@mixin generator-line-clamp($inList, $inPrefix: ".lc-") {
-  #{$inPrefix} {
-    @each $i in $inList {
+@mixin generator-line-clamp($list) {
+  $prefix: "." + $wsui-generators-prefix + "lc-";
+  #{$prefix} {
+    @each $i in $list {
       &#{$i} {
         -webkit-line-clamp: $i;
         @extend %line-clamp;

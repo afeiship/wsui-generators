@@ -1,0 +1,10 @@
+/*background-color Start*/
+@mixin generator-background-color($map) {
+  $prefix: "." + $wsui-generators-prefix + "bg-";
+  @each $key, $color in $map {
+    #{$prefix}#{$key} {
+      background-color: #{$color};
+    }
+  }
+}
+/*background-color End*/

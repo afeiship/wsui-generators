@@ -1,0 +1,14 @@
+/*font-size Start*/
+
+// NORMAL
+@mixin generator-font-size($inList, $rem: px) {
+  $prefix: "." + $wsui-generators-prefix + "f-";
+  #{$prefix} {
+    @each $i in $inList {
+      &#{$i} {
+        font-size: rem($i, $rem);
+      }
+    }
+  }
+}
+/*font-size End*/

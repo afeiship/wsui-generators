@@ -1,0 +1,19 @@
+/*width Start*/
+@mixin generator-width-w1($list) {
+  $prefix: "." + $wsui-generators-prefix + "w1-";
+  @each $value in $list {
+    #{$prefix}#{$value} {
+      width: percentage(1 / $value);
+    }
+  }
+}
+
+@mixin generator-width-wp($list) {
+  $prefix: "." + $wsui-generators-prefix + "wp-";
+  @each $value in $list {
+    #{$prefix}#{$value} {
+      width: percentage($value/10);
+    }
+  }
+}
+/*width End*/

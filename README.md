@@ -1,19 +1,19 @@
-# webkit-sass-generators
+# wsui-generators
 > Webkit sass generator mixins.
 
 ## installation
 ```shell
-npm i -S @feizheng/webkit-sass-generators
+npm i -S @jswork/wsui-generators
 ```
 
 ## update
 ```shell
-npm update @feizheng/webkit-sass-generators
+npm update @jswork/wsui-generators
 ```
 
 ## usage
 ```scss
-@import "../dist/webkit-sass-generators.scss";
+@import "@jswork/wsui-generators";
 //test color-map
 $color-map: (
   0:#000,
@@ -64,23 +64,9 @@ $line-clamp:(1,2,3,4,5);
 @include generator-grid(12,'.wk-row','.wk-col-');
 @include generator-line($width-list,#f3f3f3,'.dc-line-');
 @include generator-line-clamp($line-clamp,'.line-clamp-');
-
-
-.test-ml100{
-  >span{
-    border: 1px solid #000;
-  }
-}
-```
-
-## some problem:
-```sass
-  /* autoprefixer: off */
-  -webkit-box-orient: vertical;
-  /* autoprefixer: on */
 ```
 
 ## resources
-+ http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
-+ http://sass-lang.com/documentation/Sass/Script/Functions.html
-+ https://github.com/HugoGiraudel/SassyStrings
+- http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+- http://sass-lang.com/documentation/Sass/Script/Functions.html
+- https://github.com/HugoGiraudel/SassyStrings

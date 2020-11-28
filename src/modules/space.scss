@@ -1,0 +1,13 @@
+/*space Start*/
+@mixin generator-space($list, $rem: px) {
+  $prefix: "." + $wsui-generators-prefix + "sp-";
+  #{$prefix} {
+    @each $i in $list {
+      &#{$i} {
+        height: rem($i, $rem);
+        @extend %space;
+      }
+    }
+  }
+}
+/*space End*/

@@ -1,8 +1,0 @@
-// fontWeight
-@mixin generator-font-weight($inList, $inPrefix: ".fw-") {
-  @each $value in $inList {
-    #{$inPrefix}#{$value} {
-      font-weight: $value;
-    }
-  }
-}

@@ -1,0 +1,63 @@
+/*box Start*/
+$boxing-map: (
+  m: margin,
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  p: padding,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+  mx: (
+    margin-left,
+    margin-right,
+  ),
+  my: (
+    margin-top,
+    margin-bottom,
+  ),
+  px: (
+    padding-left,
+    padding-right,
+  ),
+  py: (
+    padding-top,
+    padding-bottom,
+  ),
+);
+
+// NORMAL
+@mixin generator-box($list, $direction: "m", $rem: px) {
+  $map-value: map_get($boxing-map, $direction);
+  $prefix: $wsui-generators-prefix + $direction + "-";
+  $typeof: type-of($map-value);
+
+  @if $typeof == string {
+    .#{$prefix} {
+      @each $i in $list {
+        &#{$i} {
+          &,
+          &_ > * {
+            #{$map-value}: rem($i, $rem);
+          }
+        }
+      }
+    }
+  } @else {
+    .#{$prefix} {
+      @each $i in $list {
+        &#{$i} {
+          &,
+          &_ > * {
+            @each $item in $map-value {
+              #{$item}: rem($i, $rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*box End*/

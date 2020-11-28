@@ -1,0 +1,13 @@
+/*border-radius Start*/
+// NORMAL
+@mixin generator-border-radius($list, $rem: px) {
+  $prefix: "." + $wsui-generators-prefix + "bdr-";
+  #{$prefix} {
+    @each $i in $list {
+      &#{$i} {
+        border-radius: rem($i, $rem);
+      }
+    }
+  }
+}
+/*border-radius End*/

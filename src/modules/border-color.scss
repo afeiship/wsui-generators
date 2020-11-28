@@ -1,0 +1,10 @@
+/*border-color Start*/
+@mixin generator-border-color($map) {
+  $prefix: "." + $wsui-generators-prefix + "bdc-";
+  @each $key, $color in $map {
+    #{$prefix}#{$key} {
+      border-color: #{$color};
+    }
+  }
+}
+/*border-color End*/

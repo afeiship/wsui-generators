@@ -1,0 +1,25 @@
+/*line-height Start*/
+// NORMAL
+@mixin generator-line-height($list, $rem: px) {
+  $prefix: "." + $wsui-generators-prefix + "lh-";
+  #{$prefix} {
+    @each $i in $list {
+      &#{$i} {
+        line-height: rem($i, $rem);
+      }
+    }
+  }
+}
+
+@mixin generator-hlh($list, $rem: px) {
+  $prefix: "." + $wsui-generators-prefix + "hlh-";
+  #{$prefix} {
+    @each $i in $list {
+      &#{$i} {
+        height: rem($i, $rem);
+        line-height: rem($i, $rem);
+      }
+    }
+  }
+}
+/*line-height End*/
