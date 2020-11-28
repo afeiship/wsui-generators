@@ -1,15 +1,15 @@
 /*border-color Start*/
 @mixin generator-border-color($map) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: border-color,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $key, $color in $map {
     #{$prefix}#{$key} {

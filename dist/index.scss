@@ -3,7 +3,7 @@
  * description: Webkit sass generator mixins.
  * homepage: https://github.com/afeiship/wsui-generators
  * version: 1.0.0
- * date: 2020-11-28 17:41:14
+ * date: 2020-11-28 17:43:31
  * license: MIT
  */
 
@@ -34,16 +34,16 @@ $wsui-generators-options: (
 
 /*background-color Start*/
 @mixin generator-background-color($map) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: background-color,
   );
 
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $key, $color in $map {
     #{$prefix}#{$key} {
@@ -55,16 +55,16 @@ $wsui-generators-options: (
 
 /*border-color Start*/
 @mixin generator-border-color($map) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: border-color,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $key, $color in $map {
     #{$prefix}#{$key} {
@@ -77,16 +77,16 @@ $wsui-generators-options: (
 /*border-radius Start*/
 // NORMAL
 @mixin generator-border-radius($list, $rem: px) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: border-radius,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   #{$prefix} {
     @each $i in $list {
@@ -131,17 +131,17 @@ $boxing-map: (
 // NORMAL
 @mixin generator-box($list, $direction: "m", $rem: px) {
   $map-value: map_get($boxing-map, $direction);
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: box,
   );
 
-  $prefix: $p1 + $direction + $p2;
+  $prefix: $global-prefix + $direction + $module-prefix;
   $typeof: type-of($map-value);
 
   @if $typeof == string {
@@ -174,17 +174,17 @@ $boxing-map: (
 
 /*color Start*/
 @mixin generator-color($map) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: color,
   );
 
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $name, $color in $map {
     #{$prefix}#{$name} {
@@ -198,16 +198,16 @@ $boxing-map: (
 
 // NORMAL
 @mixin generator-font-size($inList, $rem: px) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: font-size,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   #{$prefix} {
     @each $i in $inList {
@@ -221,16 +221,16 @@ $boxing-map: (
 
 // fontWeight
 @mixin generator-font-weight($list) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: font-weight,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $value in $list {
     #{$prefix}#{$value} {
@@ -254,16 +254,16 @@ $boxing-map: (
 }
 
 @mixin generator-line-clamp($list) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: line-clamp,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   #{$prefix} {
     @each $i in $list {
@@ -280,16 +280,16 @@ $boxing-map: (
 /*line-height Start*/
 // NORMAL
 @mixin generator-line-height($list, $rem: px) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: line-height,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   #{$prefix} {
     @each $i in $list {
@@ -301,16 +301,16 @@ $boxing-map: (
 }
 
 @mixin generator-hlh($list, $rem: px) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: height-line-height,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   #{$prefix} {
     @each $i in $list {
@@ -325,16 +325,16 @@ $boxing-map: (
 
 /*line Start*/
 @mixin generator-line($list, $color: #ccc, $rem: px) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: line,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   %line-color {
     background-color: $color;
@@ -354,16 +354,16 @@ $boxing-map: (
 
 /*space Start*/
 @mixin generator-space($list, $rem: px) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: space,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   #{$prefix} {
     @each $i in $list {
@@ -378,16 +378,16 @@ $boxing-map: (
 
 /*width Start*/
 @mixin generator-width-w1($list) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: width-w1,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $value in $list {
     #{$prefix}#{$value} {
@@ -397,16 +397,16 @@ $boxing-map: (
 }
 
 @mixin generator-width-wp($list) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: width-wp,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $value in $list {
     #{$prefix}#{$value} {

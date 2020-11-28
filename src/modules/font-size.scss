@@ -2,16 +2,16 @@
 
 // NORMAL
 @mixin generator-font-size($inList, $rem: px) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: font-size,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   #{$prefix} {
     @each $i in $inList {

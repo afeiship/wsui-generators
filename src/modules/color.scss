@@ -1,16 +1,16 @@
 /*color Start*/
 @mixin generator-color($map) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: color,
   );
 
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $name, $color in $map {
     #{$prefix}#{$name} {

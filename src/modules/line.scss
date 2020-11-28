@@ -1,15 +1,15 @@
 /*line Start*/
 @mixin generator-line($list, $color: #ccc, $rem: px) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: line,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   %line-color {
     background-color: $color;

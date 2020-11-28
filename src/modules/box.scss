@@ -31,17 +31,17 @@ $boxing-map: (
 // NORMAL
 @mixin generator-box($list, $direction: "m", $rem: px) {
   $map-value: map_get($boxing-map, $direction);
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: box,
   );
 
-  $prefix: $p1 + $direction + $p2;
+  $prefix: $global-prefix + $direction + $module-prefix;
   $typeof: type-of($map-value);
 
   @if $typeof == string {

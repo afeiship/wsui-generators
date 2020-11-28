@@ -1,15 +1,15 @@
 /*width Start*/
 @mixin generator-width-w1($list) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: width-w1,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $value in $list {
     #{$prefix}#{$value} {
@@ -19,16 +19,16 @@
 }
 
 @mixin generator-width-wp($list) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: width-wp,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $value in $list {
     #{$prefix}#{$value} {

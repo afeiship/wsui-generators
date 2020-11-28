@@ -1,15 +1,15 @@
 // fontWeight
 @mixin generator-font-weight($list) {
-  $p1: map-get(
+  $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
   );
 
-  $p2: map-get(
+  $module-prefix: map-get(
     $map: $wsui-generators-options,
     $key: font-weight,
   );
-  $prefix: "." + $p1 + $p2;
+  $prefix: "." + $global-prefix + $module-prefix;
 
   @each $value in $list {
     #{$prefix}#{$value} {
