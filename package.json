@@ -31,5 +31,9 @@
   },
   "dependencies": {
     "@jswork/wsui-functions": "^1.0.1"
-  }
+  },
+  "keywords": [
+    "webkit",
+    "generator"
+  ]
 }
