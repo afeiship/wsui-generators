@@ -1,7 +1,17 @@
 /*border-radius Start*/
 // NORMAL
 @mixin generator-border-radius($list, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "bdr-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: border-radius,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {

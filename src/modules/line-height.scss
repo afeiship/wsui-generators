@@ -1,7 +1,17 @@
 /*line-height Start*/
 // NORMAL
 @mixin generator-line-height($list, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "lh-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: line-height,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {
@@ -12,7 +22,17 @@
 }
 
 @mixin generator-hlh($list, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "hlh-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: height-line-height,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {

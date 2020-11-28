@@ -1,6 +1,16 @@
 /*border-color Start*/
 @mixin generator-border-color($map) {
-  $prefix: "." + $wsui-generators-prefix + "bdc-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: border-color,
+  );
+  $prefix: "." + $p1 + $p2;
+
   @each $key, $color in $map {
     #{$prefix}#{$key} {
       border-color: #{$color};

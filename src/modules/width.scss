@@ -1,6 +1,16 @@
 /*width Start*/
 @mixin generator-width-w1($list) {
-  $prefix: "." + $wsui-generators-prefix + "w1-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: width-w1,
+  );
+  $prefix: "." + $p1 + $p2;
+
   @each $value in $list {
     #{$prefix}#{$value} {
       width: percentage(1 / $value);
@@ -9,7 +19,17 @@
 }
 
 @mixin generator-width-wp($list) {
-  $prefix: "." + $wsui-generators-prefix + "wp-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: width-wp,
+  );
+  $prefix: "." + $p1 + $p2;
+
   @each $value in $list {
     #{$prefix}#{$value} {
       width: percentage($value/10);

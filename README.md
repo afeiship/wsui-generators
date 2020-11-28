@@ -34,7 +34,7 @@ $font-list: (10, 20, 30);
 $font-weight-list: (100, 200, 300, 400, 500, 600, 700, 800);
 $line-clamp: (1, 2, 3, 4, 5);
 
-// @include generator-color($color-map, ".c-");
+@include generator-color($color-map);
 @include generator-background-color($color-map);
 @include generator-border-color($color-map);
 
@@ -68,6 +68,27 @@ $line-clamp: (1, 2, 3, 4, 5);
 //Generate your own grid:
 @include generator-line($width-list, #f3f3f3);
 @include generator-line-clamp($line-clamp);
+```
+
+## customize
+```scss
+$wsui-generators-options: (
+  global: "",
+  background-color: "bg-",
+  border-color: "bcd-",
+  border-radius: "bdr-",
+  box: "-",
+  color: "c-",
+  font-size: "f-",
+  font-weight: "fw-",
+  line-clamp: "lc-",
+  line-height: "lh-",
+  height-line-height: "hlh-",
+  line: "line-",
+  space: "sp-",
+  width-w1: "w1-",
+  width-wp: "wp-",
+) !default;
 ```
 
 ## resources

@@ -1,6 +1,16 @@
 // fontWeight
 @mixin generator-font-weight($list) {
-  $prefix: "." + $wsui-generators-prefix + "fw-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: font-weight,
+  );
+  $prefix: "." + $p1 + $p2;
+
   @each $value in $list {
     #{$prefix}#{$value} {
       font-weight: $value;

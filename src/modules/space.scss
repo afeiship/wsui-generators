@@ -1,6 +1,16 @@
 /*space Start*/
 @mixin generator-space($list, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "sp-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: space,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {

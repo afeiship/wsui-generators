@@ -2,12 +2,28 @@
  * name: @jswork/wsui-generators
  * description: Webkit sass generator mixins.
  * homepage: https://github.com/afeiship/wsui-generators
- * version: 2.0.0
- * date: 2020-11-28 17:18:11
+ * version: 1.0.0
+ * date: 2020-11-28 17:41:14
  * license: MIT
  */
 
-$wsui-generators-prefix: "" !default;
+$wsui-generators-options: (
+  global: "",
+  background-color: "bg-",
+  border-color: "bcd-",
+  border-radius: "bdr-",
+  box: "-",
+  color: "c-",
+  font-size: "f-",
+  font-weight: "fw-",
+  line-clamp: "lc-",
+  line-height: "lh-",
+  height-line-height: "hlh-",
+  line: "line-",
+  space: "sp-",
+  width-w1: "w1-",
+  width-wp: "wp-",
+) !default;
 
 %space {
   display: block;
@@ -18,7 +34,17 @@ $wsui-generators-prefix: "" !default;
 
 /*background-color Start*/
 @mixin generator-background-color($map) {
-  $prefix: "." + $wsui-generators-prefix + "bg-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: background-color,
+  );
+
+  $prefix: "." + $p1 + $p2;
+
   @each $key, $color in $map {
     #{$prefix}#{$key} {
       background-color: #{$color};
@@ -29,7 +55,17 @@ $wsui-generators-prefix: "" !default;
 
 /*border-color Start*/
 @mixin generator-border-color($map) {
-  $prefix: "." + $wsui-generators-prefix + "bdc-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: border-color,
+  );
+  $prefix: "." + $p1 + $p2;
+
   @each $key, $color in $map {
     #{$prefix}#{$key} {
       border-color: #{$color};
@@ -41,7 +77,17 @@ $wsui-generators-prefix: "" !default;
 /*border-radius Start*/
 // NORMAL
 @mixin generator-border-radius($list, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "bdr-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: border-radius,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {
@@ -85,7 +131,17 @@ $boxing-map: (
 // NORMAL
 @mixin generator-box($list, $direction: "m", $rem: px) {
   $map-value: map_get($boxing-map, $direction);
-  $prefix: $wsui-generators-prefix + $direction + "-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: box,
+  );
+
+  $prefix: $p1 + $direction + $p2;
   $typeof: type-of($map-value);
 
   @if $typeof == string {
@@ -118,7 +174,18 @@ $boxing-map: (
 
 /*color Start*/
 @mixin generator-color($map) {
-  $prefix: "." + $wsui-generators-prefix + "c-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: color,
+  );
+
+  $prefix: "." + $p1 + $p2;
+
   @each $name, $color in $map {
     #{$prefix}#{$name} {
       color: #{$color};
@@ -131,7 +198,17 @@ $boxing-map: (
 
 // NORMAL
 @mixin generator-font-size($inList, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "f-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: font-size,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $inList {
       &#{$i} {
@@ -144,7 +221,17 @@ $boxing-map: (
 
 // fontWeight
 @mixin generator-font-weight($list) {
-  $prefix: "." + $wsui-generators-prefix + "fw-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: font-weight,
+  );
+  $prefix: "." + $p1 + $p2;
+
   @each $value in $list {
     #{$prefix}#{$value} {
       font-weight: $value;
@@ -167,7 +254,17 @@ $boxing-map: (
 }
 
 @mixin generator-line-clamp($list) {
-  $prefix: "." + $wsui-generators-prefix + "lc-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: line-clamp,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {
@@ -183,7 +280,17 @@ $boxing-map: (
 /*line-height Start*/
 // NORMAL
 @mixin generator-line-height($list, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "lh-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: line-height,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {
@@ -194,7 +301,17 @@ $boxing-map: (
 }
 
 @mixin generator-hlh($list, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "hlh-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: height-line-height,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {
@@ -208,7 +325,17 @@ $boxing-map: (
 
 /*line Start*/
 @mixin generator-line($list, $color: #ccc, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "l-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: line,
+  );
+  $prefix: "." + $p1 + $p2;
+
   %line-color {
     background-color: $color;
   }
@@ -227,7 +354,17 @@ $boxing-map: (
 
 /*space Start*/
 @mixin generator-space($list, $rem: px) {
-  $prefix: "." + $wsui-generators-prefix + "sp-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: space,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {
@@ -241,7 +378,17 @@ $boxing-map: (
 
 /*width Start*/
 @mixin generator-width-w1($list) {
-  $prefix: "." + $wsui-generators-prefix + "w1-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: width-w1,
+  );
+  $prefix: "." + $p1 + $p2;
+
   @each $value in $list {
     #{$prefix}#{$value} {
       width: percentage(1 / $value);
@@ -250,7 +397,17 @@ $boxing-map: (
 }
 
 @mixin generator-width-wp($list) {
-  $prefix: "." + $wsui-generators-prefix + "wp-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: width-wp,
+  );
+  $prefix: "." + $p1 + $p2;
+
   @each $value in $list {
     #{$prefix}#{$value} {
       width: percentage($value/10);

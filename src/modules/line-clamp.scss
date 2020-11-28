@@ -13,7 +13,17 @@
 }
 
 @mixin generator-line-clamp($list) {
-  $prefix: "." + $wsui-generators-prefix + "lc-";
+  $p1: map-get(
+    $map: $wsui-generators-options,
+    $key: global,
+  );
+
+  $p2: map-get(
+    $map: $wsui-generators-options,
+    $key: line-clamp,
+  );
+  $prefix: "." + $p1 + $p2;
+
   #{$prefix} {
     @each $i in $list {
       &#{$i} {
