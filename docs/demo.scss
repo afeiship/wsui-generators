@@ -23,7 +23,7 @@ $line-clamp: (1, 2, 3, 4, 5);
 @include generator-background-color($color-map);
 @include generator-border-color($color-map);
 
-//Generate width/blank/font-size/border-radius:
+// Generate width/blank/font-size/border-radius:
 @include generator-width-w1($w1-list);
 @include generator-width-wp($width-list);
 @include generator-space($width-list);
@@ -31,7 +31,7 @@ $line-clamp: (1, 2, 3, 4, 5);
 @include generator-font-weight($font-weight-list);
 @include generator-border-radius($border-radius-list);
 
-// //Generate margin:
+//Generate margin:
 @include generator-box($box-list, "m");
 @include generator-box($box-list, "mt");
 @include generator-box($box-list, "mr");
@@ -41,16 +41,15 @@ $line-clamp: (1, 2, 3, 4, 5);
 @include generator-box($box-list, "my");
 
 
-// // Generate rem value
-// @include generator-box($box-list, "p", 50);
-// @include generator-box($box-list, "pt", 50);
-// @include generator-box($box-list, "pr", 50);
-// @include generator-box($box-list, "pl", 50);
-// @include generator-box($box-list, "pb", 50);
-// @include generator-box($box-list, "px", 50);
-// @include generator-box($box-list, "py", 50);
+// OR you want Generate `rem` value
+@include generator-box($box-list, "p", 50);
+@include generator-box($box-list, "pt", 50);
+@include generator-box($box-list, "pr", 50);
+@include generator-box($box-list, "pl", 50);
+@include generator-box($box-list, "pb", 50);
+@include generator-box($box-list, "px", 50);
+@include generator-box($box-list, "py", 50);
 
-// //Generate your own grid:
+//Generate your own grid:
 @include generator-line($width-list, #f3f3f3);
 @include generator-line-clamp($line-clamp);
-//
