@@ -13,7 +13,6 @@ npm i -S @jswork/wsui-generators
 
 ## usage
 ```scss
-@import "@jswork/wsui-functions";
 @import "@jswork/wsui-generators";
 
 $color-map: (

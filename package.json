@@ -16,6 +16,7 @@
   "main": "dist/index.scss",
   "devDependencies": {
     "@jswork/gulp-pkg-header": "^1.0.3",
+    "@jswork/wsui-functions": "^1.0.4",
     "del": "^2.2.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.0",
@@ -28,9 +29,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "dependencies": {
-    "@jswork/wsui-functions": "^1.0.1"
   },
   "keywords": [
     "webkit",
