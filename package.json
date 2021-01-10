@@ -1,6 +1,6 @@
 {
   "name": "@jswork/wsui-generators",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webkit sass generator mixins.",
   "homepage": "https://github.com/afeiship/wsui-generators",
   "author": {
@@ -32,6 +32,19 @@
   },
   "keywords": [
     "webkit",
-    "generator"
+    "generator",
+    "wsui",
+    "css",
+    "utils",
+    "mt",
+    "mr",
+    "mb",
+    "ml",
+    "pt",
+    "pr",
+    "pb",
+    "pl",
+    "atom",
+    "tailwind"
   ]
 }
