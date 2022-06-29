@@ -11,7 +11,7 @@
     'styles',
     gulp.parallel(function () {
       return gulp
-        .src(['src/basic/*.scss', 'src/modules/*.scss'])
+        .src(['src/basic/*.scss', 'src/functions/*.scss', 'src/modules/*.scss'])
         .pipe($.concat('index.scss'))
         .pipe($.jswork.pkgHeader())
         .pipe(gulp.dest('dist'));
