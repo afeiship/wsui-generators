@@ -13,12 +13,12 @@ $wsui-generators-options: (
   line-height: "lh-",
   height-line-height: "hlh-",
   line: "line-",
-  space: "sp-",
+  blank: "blank-",
   width-w1: "w1-",
   width-wp: "wp-",
 ) !default;
 
-%space {
+%blank {
   display: block;
   font-size: 0;
   overflow: hidden;
