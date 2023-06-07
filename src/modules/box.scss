@@ -12,33 +12,33 @@ $boxing-map: (
   pl: padding-left,
   mx: (
     margin-left,
-    margin-right,
+    margin-right
   ),
   my: (
     margin-top,
-    margin-bottom,
+    margin-bottom
   ),
   px: (
     padding-left,
-    padding-right,
+    padding-right
   ),
   py: (
     padding-top,
-    padding-bottom,
-  ),
+    padding-bottom
+  )
 );
 
 // NORMAL
-@mixin generator-box($list, $direction: "m", $rem: px) {
+@mixin generator-box($list, $direction: 'm', $rem: px, $client: web) {
   $map-value: map_get($boxing-map, $direction);
   $global-prefix: map-get(
     $map: $wsui-generators-options,
-    $key: global,
+    $key: global
   );
 
   $module-prefix: map-get(
     $map: $wsui-generators-options,
-    $key: box,
+    $key: box
   );
 
   $prefix: $global-prefix + $direction + $module-prefix;
@@ -48,9 +48,17 @@ $boxing-map: (
     .#{$prefix} {
       @each $i in $list {
         &#{$i} {
-          &,
-          &_ > * {
-            #{$map-value}: rem($i, $rem);
+          @if $client == 'weapp' {
+            &,
+            &_ > view,
+            &_ > text {
+              #{$map-value}: rem($i, $rem);
+            }
+          } @else {
+            &,
+            &_ > * {
+              #{$map-value}: rem($i, $rem);
+            }
           }
         }
       }
@@ -59,10 +67,20 @@ $boxing-map: (
     .#{$prefix} {
       @each $i in $list {
         &#{$i} {
-          &,
-          &_ > * {
-            @each $item in $map-value {
-              #{$item}: rem($i, $rem);
+          @if $client == 'weapp' {
+            &,
+            &_ > view,
+            &_ > text {
+              @each $item in $map-value {
+                #{$item}: rem($i, $rem);
+              }
+            }
+          } @else {
+            &,
+            &_ > * {
+              @each $item in $map-value {
+                #{$item}: rem($i, $rem);
+              }
             }
           }
         }
