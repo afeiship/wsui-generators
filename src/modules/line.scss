@@ -19,7 +19,7 @@
     @each $i in $list {
       &#{$i} {
         height: #{$i}px;
-        @extend %space;
+        @extend %blank;
         @extend %line-color;
       }
     }
