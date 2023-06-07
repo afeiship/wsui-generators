@@ -7,7 +7,7 @@
 
   $module-prefix: map-get(
     $map: $wsui-generators-options,
-    $key: space,
+    $key: blank,
   );
   $prefix: "." + $global-prefix + $module-prefix;
 
