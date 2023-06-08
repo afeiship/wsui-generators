@@ -1,19 +1,19 @@
 /* font-family Start */
 // fontfamily
-@mixin generator-font-family($list) {
+@mixin generator-font-family($ff-map) {
   $global-prefix: map-get(
     $map: $wsui-generators-options,
-    $key: global,
+    $key: global
   );
 
   $module-prefix: map-get(
     $map: $wsui-generators-options,
-    $key: font-family,
+    $key: font-family
   );
-  $prefix: "." + $global-prefix + $module-prefix;
+  $prefix: '.' + $global-prefix + $module-prefix;
 
-  @each $value in $list {
-    #{$prefix}#{$value} {
+  @each $key, $value in $ff-map {
+    #{$prefix}#{$key} {
       font-family: $value;
     }
   }
