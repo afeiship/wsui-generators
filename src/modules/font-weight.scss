@@ -1,3 +1,4 @@
+/* font-weight Start */
 // fontWeight
 @mixin generator-font-weight($list) {
   $global-prefix: map-get(
@@ -17,3 +18,5 @@
     }
   }
 }
+
+/* font-weight Start */

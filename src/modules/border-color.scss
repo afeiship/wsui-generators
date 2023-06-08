@@ -1,4 +1,4 @@
-/*border-color Start*/
+/* border-color Start */
 @mixin generator-border-color($map) {
   $global-prefix: map-get(
     $map: $wsui-generators-options,
@@ -17,4 +17,4 @@
     }
   }
 }
-/*border-color End*/
+/* border-color End */

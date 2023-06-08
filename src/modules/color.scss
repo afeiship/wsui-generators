@@ -1,4 +1,4 @@
-/*color Start*/
+/* color Start */
 @mixin generator-color($map) {
   $global-prefix: map-get(
     $map: $wsui-generators-options,
@@ -18,4 +18,4 @@
     }
   }
 }
-/*color End*/
+/* color End */

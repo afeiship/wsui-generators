@@ -6,20 +6,20 @@
  * date: 2020-12-23 10:05:24
  * license: MIT
  */
-/*last Start*/
-/*last End*/
-/*dynamic-text-color Start*/
-/*dynamic-text-color End*/
-/*range Start*/
-/*range End*/
-/*rempx Start*/
-/*rem End*/
-/*remove-duplicates Start*/
-/*remove-duplicates End*/
-/*strip-units Start*/
-/*strip-units End*/
-/*map-deep-get Start*/
-/*map-deep-get End*/
+/*last Start */
+/*last End */
+/*dynamic-text-color Start */
+/*dynamic-text-color End */
+/*range Start */
+/*range End */
+/*rempx Start */
+/*rem End */
+/*remove-duplicates Start */
+/*remove-duplicates End */
+/*strip-units Start */
+/*strip-units End */
+/*map-deep-get Start */
+/*map-deep-get End */
 /*!
  * name: @jswork/wsui-generators
  * description: Webkit sass generator mixins.
@@ -35,19 +35,19 @@
   clear: both;
 }
 
-/*background-color Start*/
-/*background-color End*/
-/*border-color Start*/
-/*border-color End*/
-/*border-radius Start*/
-/*border-radius End*/
-/*box Start*/
-/*box End*/
-/*color Start*/
-/*color End*/
-/*font-size Start*/
-/*font-size End*/
-/*line-clamp Start*/
+/*background-color Start */
+/*background-color End */
+/*border-color Start */
+/*border-color End */
+/*border-radius Start */
+/*border-radius End */
+/*box Start */
+/*box End */
+/*color Start */
+/*color End */
+/*font-size Start */
+/*font-size End */
+/*line-clamp Start */
 .lc-1, .lc-2, .lc-3, .lc-4, .lc-5 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -56,15 +56,15 @@
   -webkit-box-orient: vertical;
 }
 
-/*line-clamp End*/
-/*line-height Start*/
-/*line-height End*/
-/*line Start*/
-/*line End*/
-/*space Start*/
-/*space End*/
-/*width Start*/
-/*width End*/
+/*line-clamp End */
+/*line-height Start */
+/*line-height End */
+/*line Start */
+/*line End */
+/*space Start */
+/*space End */
+/*width Start */
+/*width End */
 .c-0 {
   color: #000;
 }

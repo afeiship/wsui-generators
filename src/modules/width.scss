@@ -1,4 +1,4 @@
-/*width Start*/
+/* width Start */
 @mixin generator-width-w1($list) {
   $global-prefix: map-get(
     $map: $wsui-generators-options,
@@ -38,4 +38,4 @@
     }
   }
 }
-/*width End*/
+/* width End */

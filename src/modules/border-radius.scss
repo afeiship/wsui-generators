@@ -1,4 +1,4 @@
-/*border-radius Start*/
+/* border-radius Start */
 // NORMAL
 @mixin generator-border-radius($list, $rem: px) {
   $global-prefix: map-get(
@@ -20,4 +20,4 @@
     }
   }
 }
-/*border-radius End*/
+/* border-radius End */

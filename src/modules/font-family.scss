@@ -1,5 +1,6 @@
-/* blank Start */
-@mixin generator-blank($list, $rem: px) {
+/* font-family Start */
+// fontfamily
+@mixin generator-font-family($list) {
   $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global,
@@ -7,17 +8,15 @@
 
   $module-prefix: map-get(
     $map: $wsui-generators-options,
-    $key: blank,
+    $key: font-family,
   );
   $prefix: "." + $global-prefix + $module-prefix;
 
-  #{$prefix} {
-    @each $i in $list {
-      &#{$i} {
-        height: rem($i, $rem);
-        @extend %blank;
-      }
+  @each $value in $list {
+    #{$prefix}#{$value} {
+      font-family: $value;
     }
   }
 }
-/* blank End */
+
+/* font-family Start */

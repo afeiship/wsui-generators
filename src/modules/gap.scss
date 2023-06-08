@@ -1,0 +1,22 @@
+/* gap Start */
+@mixin generator-gap($list, $rem: px) {
+  $global-prefix: map-get(
+    $map: $wsui-generators-options,
+    $key: global
+  );
+
+  $module-prefix: map-get(
+    $map: $wsui-generators-options,
+    $key: gap
+  );
+  $prefix: '.' + $global-prefix + $module-prefix;
+
+  #{$prefix} {
+    @each $i in $list {
+      &#{$i} {
+        gap: #{$i}px;
+      }
+    }
+  }
+}
+/* gap End */

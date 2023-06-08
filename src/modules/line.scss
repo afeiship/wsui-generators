@@ -1,4 +1,4 @@
-/*line Start*/
+/* line Start */
 @mixin generator-line($list, $color: #ccc, $rem: px) {
   $global-prefix: map-get(
     $map: $wsui-generators-options,
@@ -25,4 +25,4 @@
     }
   }
 }
-/*line End*/
+/* line End */
