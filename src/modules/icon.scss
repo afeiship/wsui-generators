@@ -1,0 +1,23 @@
+/* ico Start */
+@mixin generator-ico($list) {
+  $global-prefix: map-get(
+    $map: $wsui-generators-options,
+    $key: global
+  );
+
+  $module-prefix: map-get(
+    $map: $wsui-generators-options,
+    $key: ico
+  );
+  $prefix: '.' + $global-prefix + $module-prefix;
+
+  #{$prefix} {
+    @each $i in $list {
+      &#{$i} {
+        @extend %ico;
+        font-size: #{$i}px;
+      }
+    }
+  }
+}
+/* ico End */

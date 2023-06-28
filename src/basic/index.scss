@@ -1,21 +1,23 @@
-@use "sass:math";
+@use 'sass:math';
 
 $wsui-generators-options: (
-  global: "",
-  background-color: "bg-",
-  border-color: "bcd-",
-  border-radius: "bdr-",
-  box: "-",
-  color: "c-",
-  font-size: "f-",
-  font-weight: "fw-",
-  line-clamp: "lc-",
-  line-height: "lh-",
-  height-line-height: "hlh-",
-  line: "line-",
-  blank: "blank-",
-  width-w1: "w1-",
-  width-wp: "wp-",
+  global: '',
+  background-color: 'bg-',
+  border-color: 'bcd-',
+  border-radius: 'bdr-',
+  box: '-',
+  color: 'c-',
+  font-size: 'f-',
+  font-weight: 'fw-',
+  gap: 'gap-',
+  icon: 'ico-',
+  line-clamp: 'lc-',
+  line-height: 'lh-',
+  height-line-height: 'hlh-',
+  line: 'line-',
+  blank: 'blank-',
+  width-w1: 'w1-',
+  width-wp: 'wp-'
 ) !default;
 
 %blank {
@@ -23,4 +25,9 @@ $wsui-generators-options: (
   font-size: 0;
   overflow: hidden;
   clear: both;
+}
+
+%ico {
+  width: 1em;
+  height: 1em;
 }
