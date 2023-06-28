@@ -7,14 +7,14 @@
 
   $module-prefix: map-get(
     $map: $wsui-generators-options,
-    $key: ico
+    $key: icon
   );
   $prefix: '.' + $global-prefix + $module-prefix;
 
   #{$prefix} {
     @each $i in $list {
       &#{$i} {
-        @extend %ico;
+        @extend %icon;
         font-size: #{$i}px;
       }
     }
