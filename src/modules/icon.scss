@@ -1,5 +1,5 @@
-/* ico Start */
-@mixin generator-ico($list) {
+/* icon Start */
+@mixin generator-icon($list) {
   $global-prefix: map-get(
     $map: $wsui-generators-options,
     $key: global
@@ -20,4 +20,4 @@
     }
   }
 }
-/* ico End */
+/* icon End */
